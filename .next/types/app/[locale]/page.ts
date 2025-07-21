@@ -1,4 +1,4 @@
-// File: C:\Users\borsa\OneDrive\Documents\Car_imports\app\[locale]\page.tsx
+// File: C:\Users\borsa\OneDrive\Documents\Car_imports - Copy (5)\app\[locale]\page.tsx
 import * as entry from '../../../../app/[locale]/page.js'
 import type { ResolvingMetadata, ResolvingViewport } from 'next/dist/lib/metadata/types/metadata-interface.js'
 

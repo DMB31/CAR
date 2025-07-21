@@ -1,4 +1,4 @@
-// File: C:\Users\borsa\OneDrive\Documents\Car_imports\app\[locale]\layout.tsx
+// File: C:\Users\borsa\OneDrive\Documents\Car_imports - Copy (5)\app\[locale]\layout.tsx
 import * as entry from '../../../../app/[locale]/layout.js'
 import type { ResolvingMetadata, ResolvingViewport } from 'next/dist/lib/metadata/types/metadata-interface.js'
 

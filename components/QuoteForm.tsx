@@ -1166,12 +1166,12 @@ export default function QuoteForm() {
                     ) : (
                       <div className="grid md:grid-cols-2 gap-6">
                         <div className="bg-white/60 rounded-xl p-4">
-                          <p className="text-primary-700 font-semibold">{t('exchange_rate_marcheNoir_display')}</p>
-                          <p className="text-2xl font-bold text-primary-600">1 EUR = {exchangeRates.marcheNoir} DZD</p>
-                        </div>
-                        <div className="bg-white/60 rounded-xl p-4">
                           <p className="text-primary-700 font-semibold">{t('exchange_rate_bancaire_display')}</p>
                           <p className="text-2xl font-bold text-primary-600">1 EUR = {exchangeRates.bancaire} DZD</p>
+                        </div>
+                        <div className="bg-white/60 rounded-xl p-4">
+                          <p className="text-primary-700 font-semibold">{t('exchange_rate_marcheNoir_display')}</p>
+                          <p className="text-2xl font-bold text-primary-600">1 EUR = {exchangeRates.marcheNoir} DZD</p>
                         </div>
                       </div>
                     )}
