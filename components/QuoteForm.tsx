@@ -48,7 +48,7 @@ export default function QuoteForm() {
     bancaire: 150
   })
   const [isEditingRates, setIsEditingRates] = useState(false)
-  const [selectedBrand, setSelectedBrand] = useState('');
+  const [selectedBrand, setSelectedBrand] = useState<keyof typeof carData | ''>('');
   const [selectedModel, setSelectedModel] = useState('');
 
   const calculateCustomsDuty = () => {
@@ -393,7 +393,7 @@ export default function QuoteForm() {
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
     const { name, value } = e.target;
     if (name === 'brand') {
-      setSelectedBrand(value);
+      setSelectedBrand(value as keyof typeof carData | '');
       setSelectedModel('');
       setFormData({ ...formData, brand: value, model: '' });
     } else if (name === 'model') {
@@ -985,7 +985,7 @@ export default function QuoteForm() {
                         options={brandOptions}
                         value={brandOptions.find(option => option.value === selectedBrand) || null}
                         onChange={option => {
-                          setSelectedBrand(option ? option.value : '');
+                          setSelectedBrand((option ? option.value : '') as keyof typeof carData | '');
                           setSelectedModel('');
                           setFormData({ ...formData, brand: option ? option.value : '', model: '' });
                         }}
