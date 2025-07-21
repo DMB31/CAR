@@ -12,7 +12,9 @@ interface Language {
 
 const languages: Language[] = [
   { code: 'fr', name: 'Français', flag: '🇫🇷' },
+  { code: 'en', name: 'English', flag: '🇬🇧' },
   { code: 'ar', name: 'العربية', flag: '🇩🇿' },
+  { code: 'zh', name: '中文', flag: '🇨🇳' },
 ];
 
 export default function LanguageSwitcher() {
@@ -79,7 +81,7 @@ export default function LanguageSwitcher() {
         let pathWithoutLocale = currentUrl;
         
         // Handle both cases: /fr/... and /ar/...
-        const localeRegex = new RegExp(`^/(fr|ar)(/|$)`);
+        const localeRegex = new RegExp(`^/(fr|ar|zh|en)(/|$)`);
         const match = currentUrl.match(localeRegex);
         
         if (match) {

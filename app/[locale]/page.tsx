@@ -3,7 +3,7 @@ import Hero from '@/components/Hero'
 import PartnerLogos from '@/components/PartnerLogos'
 import Steps from '@/components/Steps'
 import Services from '@/components/Services'
-import MoujajidineLicense from '@/components/MoujajidineLicense'
+import VehicleImportGuide from '@/components/VehicleImportGuide'
 import Testimonials from '@/components/Testimonials'
 import QuoteForm from '@/components/QuoteForm'
 import ContactForm from '@/components/ContactForm'
@@ -14,12 +14,12 @@ export default function Home() {
     <main className="min-h-screen">
       <Header />
       <Hero />
-      <PartnerLogos />
+      
       <Steps />
       <Services />
-      <MoujajidineLicense />
-      <Testimonials />
+      <VehicleImportGuide />
       <QuoteForm />
+      
       <ContactForm />
       <Footer />
     </main>

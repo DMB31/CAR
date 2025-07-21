@@ -1,16 +1,15 @@
 'use client'
 
 import { useState } from 'react'
-import { Calculator, Car, MapPin, Euro, Send, CheckCircle, Download, Edit3, Printer as PrintIcon, Sparkles, TrendingUp, Shield, Clock } from 'lucide-react'
+import { Calculator, Car, MapPin, Euro, Send, CheckCircle, Download, Edit3, Printer as PrintIcon, Sparkles, TrendingUp, Shield, Clock, FileDown } from 'lucide-react'
 import { useTranslations, useLocale } from 'next-intl'
+import carData from '../cars.json'; // Supposons que cars.json est exporté en JSON (sinon, utiliser un import dynamique ou fetch)
+import Select from 'react-select';
 
 export default function QuoteForm() {
   const t = useTranslations('QuoteForm');
   const locale = useLocale();
   const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    phone: '',
     brand: '',
     model: '',
     year: '',
@@ -20,8 +19,7 @@ export default function QuoteForm() {
     cylindree: '',
     origin: '',
     destination: '',
-    urgency: '',
-    message: ''
+    importType: 'classique' // Ajout du type d'importation
   })
 
   const [isSubmitted, setIsSubmitted] = useState(false)
@@ -50,10 +48,33 @@ export default function QuoteForm() {
     bancaire: 150
   })
   const [isEditingRates, setIsEditingRates] = useState(false)
+  const [selectedBrand, setSelectedBrand] = useState('');
+  const [selectedModel, setSelectedModel] = useState('');
 
   const calculateCustomsDuty = () => {
     if (!formData.priceEur || !formData.engineType || !formData.vehicleType) {
       return null
+    }
+
+    // Gestion des cas spéciaux
+    if (formData.importType === 'moujahidine') {
+      // Exonération totale
+      return {
+        priceEur: parseFloat(formData.priceEur),
+        prixDZD: parseFloat(formData.priceEur) * exchangeRates.marcheNoir,
+        prixBaseTaxes: 0,
+        droitDouane: 0,
+        montantDroitDouane: 0,
+        prct: 0,
+        tcs: 0,
+        tva: 0,
+        tic: 0,
+        totalDroitsTaxes: 0,
+        reduction: 100,
+        montantReduction: 0,
+        totalFinal: 0,
+        coutTotalVehicule: parseFloat(formData.priceEur) * exchangeRates.marcheNoir
+      }
     }
 
     const priceEur = parseFloat(formData.priceEur)
@@ -68,7 +89,7 @@ export default function QuoteForm() {
     // Calcul du droit de douane
     let droitDouane = 0
     
-    if (formData.engineType === 'diesel' || formData.engineType === 'electrique') {
+    if (formData.engineType === 'electrique') {
       droitDouane = 0.30 // 30%
     } else if (formData.engineType === 'essence' || formData.engineType === 'hybride') {
       if (cylindree < 1000) {
@@ -82,8 +103,13 @@ export default function QuoteForm() {
       }
     }
 
+    // Application réduction CCR
+    let montantDroitDouane = prixBaseTaxes * droitDouane
+    if (formData.importType === 'ccr') {
+      montantDroitDouane = montantDroitDouane * 0.15 // 85% de réduction
+    }
+
     // Calcul des taxes
-    const montantDroitDouane = prixBaseTaxes * droitDouane
     const prct = prixBaseTaxes * 0.02 // 2%
     const tcs = prixBaseTaxes * 0.02 // 2%
     
@@ -100,7 +126,7 @@ export default function QuoteForm() {
     // Total des droits et taxes
     let totalDroitsTaxes = montantDroitDouane + prct + tcs + tva + tic
 
-    // Réductions pour véhicules d'occasion
+    // Réductions pour véhicules d'occasion (selon loi de finances 2023)
     let reduction = 0
     if (formData.vehicleType === 'occasion') {
       if (formData.engineType === 'electrique') {
@@ -111,6 +137,7 @@ export default function QuoteForm() {
         reduction = 0.20 // 20%
       }
     }
+    // Note: Pour les véhicules neufs, pas de réduction (reduction = 0)
 
     const montantReduction = totalDroitsTaxes * reduction
     const totalFinal = totalDroitsTaxes - montantReduction
@@ -134,14 +161,20 @@ export default function QuoteForm() {
     }
   }
 
-  const generatePDF = async () => {
-    if (!calculationResult) return
+  const getPdfContent = () => {
+    if (!calculationResult) return ''
     
-    setIsGeneratingPDF(true)
-    
-    try {
-      // This is a simplified example. For a real app, consider a server-side PDF generation library.
-      const pdfContent = `
+      // Détermination de la note selon le type d'importation (multilingue)
+      let importNote = '';
+      if (formData.importType === 'moujahidine') {
+        importNote = t('pdf_note_moujahidine');
+      } else if (formData.importType === 'ccr') {
+        importNote = t('pdf_note_ccr');
+      } else {
+        importNote = t('pdf_note_classique');
+      }
+
+    return `
         <!DOCTYPE html>
         <html dir="${locale === 'ar' ? 'rtl' : 'ltr'}">
         <head>
@@ -149,42 +182,103 @@ export default function QuoteForm() {
           <title>${t('result_calculation_title')}</title>
           <style>
             body { font-family: Arial, sans-serif; margin: 20px; }
-            /* Add styles here */
+            table { border-collapse: collapse; width: 100%; }
+            th, td { border: 1px solid #ddd; padding: 8px; }
+            th { background: #f5f5f5; }
+            tr.total { font-weight: bold; background: #f0f0f0; }
           </style>
         </head>
         <body>
           <h1>${t('result_calculation_title')}</h1>
-          {/* This is a very basic structure. More complex layout would be needed. */}
           <p>${t('result_calculation_subtitle')}</p>
-          
           <h2>${t('result_costs_title')}</h2>
           <table>
             <thead>
               <tr>
                 <th>${t('result_table_header_element')}</th>
+                <th>${t('result_table_header_base')}</th>
+                <th>${t('result_table_header_rate')}</th>
                 <th>${t('result_table_header_amount')}</th>
               </tr>
             </thead>
             <tbody>
               <tr>
                 <td>${t('result_table_item_price')}</td>
+                <td>${calculationResult.priceEur.toLocaleString()} EUR</td>
+                <td>${t('exchange_rate_marcheNoir_label')} (${exchangeRates.marcheNoir})</td>
                 <td>${calculationResult.prixDZD.toLocaleString()} DZD</td>
               </tr>
               <tr>
+                <td>${t('result_table_item_customs')}</td>
+                <td>${calculationResult.prixBaseTaxes.toLocaleString()} DZD</td>
+                <td>${calculationResult.droitDouane}%</td>
+                <td>${calculationResult.montantDroitDouane.toLocaleString()} DZD</td>
+              </tr>
+              <tr>
+                <td>${t('result_table_item_prct')}</td>
+                <td>${calculationResult.prixBaseTaxes.toLocaleString()} DZD</td>
+                <td>2%</td>
+                <td>${calculationResult.prct.toLocaleString()} DZD</td>
+              </tr>
+              <tr>
+                <td>${t('result_table_item_tcs')}</td>
+                <td>${calculationResult.prixBaseTaxes.toLocaleString()} DZD</td>
+                <td>2%</td>
+                <td>${calculationResult.tcs.toLocaleString()} DZD</td>
+              </tr>
+              <tr>
+                <td>${t('result_table_item_tva')}</td>
+                <td>${(calculationResult.prixBaseTaxes + calculationResult.montantDroitDouane + calculationResult.prct + calculationResult.tcs).toLocaleString()} DZD</td>
+                <td>19%</td>
+                <td>${calculationResult.tva.toLocaleString()} DZD</td>
+              </tr>
+              <tr>
+                <td>${t('result_table_item_tic')}</td>
+                <td>${calculationResult.prixBaseTaxes.toLocaleString()} DZD</td>
+                <td>60%</td>
+                <td>${calculationResult.tic.toLocaleString()} DZD</td>
+              </tr>
+              <tr class="total">
                 <td>${t('result_table_item_total_taxes')}</td>
+                <td>-</td>
+                <td>-</td>
+                <td>${calculationResult.totalDroitsTaxes.toLocaleString()} DZD</td>
+              </tr>
+              <tr>
+                <td>${t('result_table_item_reduction')}</td>
+                <td>${calculationResult.totalDroitsTaxes.toLocaleString()} DZD</td>
+                <td>-${calculationResult.reduction}%</td>
+                <td>-${calculationResult.montantReduction.toLocaleString()} DZD</td>
+              </tr>
+              <tr class="total">
+                <td>${t('result_table_item_total_after_reduction')}</td>
+                <td>-</td>
+                <td>-</td>
                 <td>${calculationResult.totalFinal.toLocaleString()} DZD</td>
               </tr>
-              <tr style="font-weight: bold;">
+              <tr class="total">
                 <td>${t('result_total_cost')}</td>
+                <td>-</td>
+                <td>-</td>
                 <td>${calculationResult.coutTotalVehicule.toLocaleString()} DZD</td>
               </tr>
             </tbody>
           </table>
-
+          <p style="margin-top:24px; font-size:14px; color:#555;">
+            <strong>${t('pdf_note_label')} :</strong> ${importNote}
+          </p>
         </body>
         </html>
       `
+  }
 
+  const generatePDF = async () => {
+    if (!calculationResult) return
+    
+    setIsGeneratingPDF(true)
+    
+    try {
+      const pdfContent = getPdfContent()
       const printWindow = window.open('', '_blank')
       if (printWindow) {
         printWindow.document.write(pdfContent)
@@ -199,13 +293,41 @@ export default function QuoteForm() {
     }
   }
 
+  const downloadPDF = async () => {
+    if (!calculationResult) return
+    
+    setIsGeneratingPDF(true)
+    
+    try {
+      const pdfContent = getPdfContent()
+      
+      // Créer un blob avec le contenu HTML
+      const blob = new Blob([pdfContent], { type: 'text/html' })
+      const url = URL.createObjectURL(blob)
+      
+      // Créer un lien de téléchargement
+      const link = document.createElement('a')
+      link.href = url
+      link.download = `devis-importation-${formData.brand || 'vehicule'}-${new Date().toISOString().split('T')[0]}.html`
+      document.body.appendChild(link)
+      link.click()
+      document.body.removeChild(link)
+      
+      // Nettoyer l'URL
+      URL.revokeObjectURL(url)
+      
+    } catch (error) {
+      console.error('Error downloading PDF:', error)
+      alert(t('error_generating_pdf'))
+    } finally {
+      setIsGeneratingPDF(false)
+    }
+  }
+
   const resetForm = () => {
     setIsSubmitted(false)
     setCalculationResult(null)
     setFormData({
-      name: '',
-      email: '',
-      phone: '',
       brand: '',
       model: '',
       year: '',
@@ -215,8 +337,7 @@ export default function QuoteForm() {
       cylindree: '',
       origin: '',
       destination: '',
-      urgency: '',
-      message: ''
+      importType: 'classique'
     })
   }
 
@@ -231,9 +352,6 @@ export default function QuoteForm() {
       // Préparer les données pour Google Sheets
       const submissionData = {
         timestamp: new Date().toLocaleString('fr-FR'),
-        name: formData.name,
-        email: formData.email,
-        phone: formData.phone,
         brand: formData.brand,
         model: formData.model,
         year: formData.year,
@@ -243,8 +361,7 @@ export default function QuoteForm() {
         cylindree: formData.cylindree,
         origin: formData.origin,
         destination: formData.destination,
-        urgency: formData.urgency,
-        message: formData.message,
+        importType: formData.importType,
         exchangeRateMarcheNoir: exchangeRates.marcheNoir,
         exchangeRateBancaire: exchangeRates.bancaire,
         calculatedTotal: calculation ? calculation.coutTotalVehicule : 'N/A',
@@ -272,12 +389,23 @@ export default function QuoteForm() {
     }
   }
 
+  // Remplacer le handleChange pour gérer la marque et le modèle dynamiquement
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
-    setFormData({
-      ...formData,
-      [e.target.name]: e.target.value
-    })
-  }
+    const { name, value } = e.target;
+    if (name === 'brand') {
+      setSelectedBrand(value);
+      setSelectedModel('');
+      setFormData({ ...formData, brand: value, model: '' });
+    } else if (name === 'model') {
+      setSelectedModel(value);
+      setFormData({ ...formData, model: value });
+    } else {
+      setFormData({
+        ...formData,
+        [name]: value
+      });
+    }
+  };
 
   const handleExchangeRateChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setExchangeRates({
@@ -343,6 +471,10 @@ export default function QuoteForm() {
     setFormData(newFormData)
   }
 
+  // Juste avant le return du composant, préparer les options pour react-select :
+  const brandOptions = Object.keys(carData).map(brand => ({ value: brand, label: brand }));
+  const modelOptions = selectedBrand && carData[selectedBrand] ? carData[selectedBrand].filter(model => model !== 'Other').map(model => ({ value: model, label: model })) : [];
+
   if (isSubmitted && calculationResult) {
     return (
       <section id="devis" className="min-h-screen bg-gradient-to-br from-gray-50 via-gray-100 to-gray-50 section-padding">
@@ -386,6 +518,31 @@ export default function QuoteForm() {
                     <>
                       <Download className="w-5 h-5" />
                       <span>{t('result_button_open_pdf')}</span>
+                    </>
+                  )}
+                </div>
+              </button>
+              
+              <button
+                onClick={downloadPDF}
+                disabled={isGeneratingPDF}
+                className={`group relative overflow-hidden px-8 py-4 rounded-2xl font-semibold transition-all duration-300 transform hover:scale-105 ${
+                  isGeneratingPDF 
+                    ? 'bg-gray-400 cursor-not-allowed' 
+                    : 'bg-gradient-to-r from-green-500 to-green-600 hover:from-green-600 hover:to-green-700 text-white shadow-lg hover:shadow-xl'
+                }`}
+              >
+                <div className="absolute inset-0 bg-white opacity-0 group-hover:opacity-10 transition-opacity duration-300"></div>
+                <div className="relative flex items-center space-x-3">
+                  {isGeneratingPDF ? (
+                    <>
+                      <div className="w-5 h-5 border-2 border-white border-t-transparent rounded-full animate-spin"></div>
+                      <span>{t('result_button_generating_pdf')}</span>
+                    </>
+                  ) : (
+                    <>
+                      <FileDown className="w-5 h-5" />
+                      <span>{t('button_download_pdf')}</span>
                     </>
                   )}
                 </div>
@@ -663,92 +820,197 @@ export default function QuoteForm() {
 
               <form onSubmit={handleSubmit} className="p-4 sm:p-6 lg:p-8 space-y-8 lg:space-y-10">
                 
-                {/* Personal Information Section */}
+                {/* Type d'importation et Informations du véhicule */}
                 <div className="space-y-4 lg:space-y-6">
                   <div className="flex items-center space-x-3 lg:space-x-4 pb-3 lg:pb-4 border-b border-gray-200">
                     <div className="w-8 h-8 lg:w-10 lg:h-10 bg-gradient-to-r from-primary-500 to-primary-600 rounded-lg lg:rounded-xl flex items-center justify-center">
                       <span className="text-white font-bold text-sm lg:text-base">1</span>
                     </div>
                     <h3 className="text-lg lg:text-xl font-bold text-secondary-500">
-                      {t('section_personal_info')}
+                      {t('section_import_type_vehicle')}
                     </h3>
                   </div>
-                  <div className="grid grid-cols-1 md:grid-cols-3 gap-4 lg:gap-6">
-                    <div className="space-y-2">
-                      <label htmlFor="name" className="block text-sm font-semibold text-secondary-500">{t('form_name')}</label>
-                      <input 
-                        type="text" 
-                        id="name" 
-                        name="name" 
-                        value={formData.name} 
-                        onChange={handleChange} 
-                        className="w-full px-3 lg:px-4 py-2.5 lg:py-3 rounded-lg lg:rounded-xl border border-gray-200 focus:ring-2 focus:ring-primary-500 focus:border-transparent transition-all duration-200 bg-white/70 backdrop-blur-sm text-sm lg:text-base" 
-                        required 
-                      />
-                    </div>
-                    <div className="space-y-2">
-                      <label htmlFor="email" className="block text-sm font-semibold text-secondary-500">{t('form_email')}</label>
-                      <input 
-                        type="email" 
-                        id="email" 
-                        name="email" 
-                        value={formData.email} 
-                        onChange={handleChange} 
-                        className="w-full px-3 lg:px-4 py-2.5 lg:py-3 rounded-lg lg:rounded-xl border border-gray-200 focus:ring-2 focus:ring-primary-500 focus:border-transparent transition-all duration-200 bg-white/70 backdrop-blur-sm text-sm lg:text-base" 
-                        required 
-                      />
-                    </div>
-                    <div className="space-y-2">
-                      <label htmlFor="phone" className="block text-sm font-semibold text-secondary-500">{t('form_phone')}</label>
-                      <input 
-                        type="tel" 
-                        id="phone" 
-                        name="phone" 
-                        value={formData.phone} 
-                        onChange={handleChange} 
-                        className="w-full px-3 lg:px-4 py-2.5 lg:py-3 rounded-lg lg:rounded-xl border border-gray-200 focus:ring-2 focus:ring-primary-500 focus:border-transparent transition-all duration-200 bg-white/70 backdrop-blur-sm text-sm lg:text-base" 
-                      />
+                  
+                  {/* Type d'importation */}
+                  <div className="space-y-4">
+                    <p className="text-sm text-gray-600 font-medium">Sélectionnez votre type d'importation :</p>
+                    <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+                      <label className="flex items-center space-x-3 p-4 bg-white/70 border border-gray-200 rounded-lg cursor-pointer hover:bg-gray-50 transition-colors">
+                        <input
+                          type="radio"
+                          name="importType"
+                          value="classique"
+                          checked={formData.importType === 'classique'}
+                          onChange={handleChange}
+                          className="w-4 h-4 text-primary-600 focus:ring-primary-500 border-gray-300"
+                        />
+                        <span className="text-sm font-medium text-gray-700">Importation Classique</span>
+                      </label>
+                      <label className="flex items-center space-x-3 p-4 bg-white/70 border border-gray-200 rounded-lg cursor-pointer hover:bg-gray-50 transition-colors">
+                        <input
+                          type="radio"
+                          name="importType"
+                          value="ccr"
+                          checked={formData.importType === 'ccr'}
+                          onChange={handleChange}
+                          className="w-4 h-4 text-primary-600 focus:ring-primary-500 border-gray-300"
+                        />
+                        <span className="text-sm font-medium text-gray-700">CCR (Changement de Résidence)</span>
+                      </label>
+                      <label className="flex items-center space-x-3 p-4 bg-white/70 border border-gray-200 rounded-lg cursor-pointer hover:bg-gray-50 transition-colors">
+                        <input
+                          type="radio"
+                          name="importType"
+                          value="moujahidine"
+                          checked={formData.importType === 'moujahidine'}
+                          onChange={handleChange}
+                          className="w-4 h-4 text-primary-600 focus:ring-primary-500 border-gray-300"
+                        />
+                        <span className="text-sm font-medium text-gray-700">Moujahidine</span>
+                      </label>
                     </div>
                   </div>
+
+
                 </div>
 
-                {/* Vehicle Information Section */}
+                {/* Vehicle Basic Information Section */}
                 <div className="space-y-4 lg:space-y-6">
                   <div className="flex items-center space-x-3 lg:space-x-4 pb-3 lg:pb-4 border-b border-gray-200">
                     <div className="w-8 h-8 lg:w-10 lg:h-10 bg-gradient-to-r from-secondary-500 to-secondary-600 rounded-lg lg:rounded-xl flex items-center justify-center">
                       <span className="text-white font-bold text-sm lg:text-base">2</span>
                     </div>
                     <h3 className="text-lg lg:text-xl font-bold text-secondary-500">
-                      {t('section_vehicle_info')}
+                      {t('section_basic_info')}
                     </h3>
                   </div>
+
+                  {/* Type de véhicule */}
+                  <div className="space-y-4">
+                    <p className="text-sm text-gray-600 font-medium">Sélectionnez le type de véhicule :</p>
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                      <label className="flex items-center space-x-3 p-4 bg-white/70 border border-gray-200 rounded-lg cursor-pointer hover:bg-gray-50 transition-colors">
+                        <input
+                          type="radio"
+                          name="vehicleType"
+                          value="neuf"
+                          checked={formData.vehicleType === 'neuf'}
+                          onChange={handleChange}
+                          disabled={isVehicleUsed(formData.year)}
+                          className="w-4 h-4 text-primary-600 focus:ring-primary-500 border-gray-300"
+                        />
+                        <span className="text-sm font-medium text-gray-700">{t('form_vehicleType_option_new')}</span>
+                      </label>
+                      <label className="flex items-center space-x-3 p-4 bg-white/70 border border-gray-200 rounded-lg cursor-pointer hover:bg-gray-50 transition-colors">
+                        <input
+                          type="radio"
+                          name="vehicleType"
+                          value="occasion"
+                          checked={formData.vehicleType === 'occasion'}
+                          onChange={handleChange}
+                          disabled={isVehicleUsed(formData.year)}
+                          className="w-4 h-4 text-primary-600 focus:ring-primary-500 border-gray-300"
+                        />
+                        <span className="text-sm font-medium text-gray-700">{t('form_vehicleType_option_used')}</span>
+                      </label>
+                    </div>
+                    {isVehicleUsed(formData.year) && (
+                      <p className="text-sm text-amber-600 bg-amber-50 border border-amber-200 rounded-lg p-2 mt-2">
+                        <span className="font-medium">Automatique:</span> Véhicule classé comme "occasion" car il a plus de 3 ans.
+                      </p>
+                    )}
+                    {formData.vehicleType === 'occasion' && (
+                      <div className="text-sm text-blue-600 bg-blue-50 border border-blue-200 rounded-lg p-2 mt-2">
+                        <span className="font-medium">Info:</span> Véhicule d'occasion bénéficie de réductions selon la motorisation :
+                        <ul className="mt-1 text-xs list-disc list-inside">
+                          <li>Électrique : 80% de réduction</li>
+                          <li>Essence/Hybride ≤1800cm³ : 50% de réduction</li>
+                          <li>Essence/Hybride &gt;1800cm³ : 20% de réduction</li>
+                        </ul>
+                      </div>
+                    )}
+                    {formData.vehicleType === 'neuf' && (
+                      <div className="text-sm text-gray-600 bg-gray-50 border border-gray-200 rounded-lg p-2 mt-2">
+                        <span className="font-medium">Info:</span> Véhicule neuf soumis à la taxation complète (pas de réduction).
+                      </div>
+                    )}
+                  </div>
+
+                  {/* Type de motorisation */}
+                  <div className="space-y-4">
+                    <p className="text-sm text-gray-600 font-medium">Sélectionnez le type de motorisation :</p>
+                    <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+                      <label className="flex items-center space-x-3 p-4 bg-white/70 border border-gray-200 rounded-lg cursor-pointer hover:bg-gray-50 transition-colors">
+                        <input
+                          type="radio"
+                          name="engineType"
+                          value="essence"
+                          checked={formData.engineType === 'essence'}
+                          onChange={handleChange}
+                          className="w-4 h-4 text-primary-600 focus:ring-primary-500 border-gray-300"
+                        />
+                        <span className="text-sm font-medium text-gray-700">{t('form_engineType_option_essence')}</span>
+                      </label>
+                      <label className="flex items-center space-x-3 p-4 bg-white/70 border border-gray-200 rounded-lg cursor-pointer hover:bg-gray-50 transition-colors">
+                        <input
+                          type="radio"
+                          name="engineType"
+                          value="hybride"
+                          checked={formData.engineType === 'hybride'}
+                          onChange={handleChange}
+                          className="w-4 h-4 text-primary-600 focus:ring-primary-500 border-gray-300"
+                        />
+                        <span className="text-sm font-medium text-gray-700">{t('form_engineType_option_hybride')}</span>
+                      </label>
+                      <label className="flex items-center space-x-3 p-4 bg-white/70 border border-gray-200 rounded-lg cursor-pointer hover:bg-gray-50 transition-colors">
+                        <input
+                          type="radio"
+                          name="engineType"
+                          value="electrique"
+                          checked={formData.engineType === 'electrique'}
+                          onChange={handleChange}
+                          className="w-4 h-4 text-primary-600 focus:ring-primary-500 border-gray-300"
+                        />
+                        <span className="text-sm font-medium text-gray-700">{t('form_engineType_option_electrique')}</span>
+                      </label>
+                    </div>
+                  </div>
+
                   <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 lg:gap-6">
                     <div className="space-y-2">
                       <label htmlFor="brand" className="block text-sm font-semibold text-secondary-500">{t('form_brand')}</label>
-                      <select 
-                        id="brand" 
-                        name="brand" 
-                        value={formData.brand} 
-                        onChange={handleChange} 
-                        className="w-full px-3 lg:px-4 py-2.5 lg:py-3 rounded-lg lg:rounded-xl border border-gray-200 focus:ring-2 focus:ring-secondary-500 focus:border-transparent transition-all duration-200 bg-white/70 backdrop-blur-sm text-sm lg:text-base" 
-                        required
-                      >
-                        <option value="">{t('form_select_placeholder')}</option>
-                        {vehicleBrands.map(brand => (
-                          <option key={brand} value={brand}>{brand}</option>
-                        ))}
-                      </select>
+                      <Select
+                        inputId="brand"
+                        name="brand"
+                        options={brandOptions}
+                        value={brandOptions.find(option => option.value === selectedBrand) || null}
+                        onChange={option => {
+                          setSelectedBrand(option ? option.value : '');
+                          setSelectedModel('');
+                          setFormData({ ...formData, brand: option ? option.value : '', model: '' });
+                        }}
+                        placeholder={t('form_select_placeholder')}
+                        isClearable
+                        classNamePrefix="react-select"
+                        styles={{ menu: base => ({ ...base, zIndex: 100 }) }}
+                      />
                     </div>
                     <div className="space-y-2">
                       <label htmlFor="model" className="block text-sm font-semibold text-secondary-500">{t('form_model')}</label>
-                      <input 
-                        type="text" 
-                        id="model" 
-                        name="model" 
-                        value={formData.model} 
-                        onChange={handleChange} 
-                        className="w-full px-3 lg:px-4 py-2.5 lg:py-3 rounded-lg lg:rounded-xl border border-gray-200 focus:ring-2 focus:ring-secondary-500 focus:border-transparent transition-all duration-200 bg-white/70 backdrop-blur-sm text-sm lg:text-base" 
-                        required 
+                      <Select
+                        inputId="model"
+                        name="model"
+                        options={modelOptions}
+                        value={modelOptions.find(option => option.value === selectedModel) || null}
+                        onChange={option => {
+                          setSelectedModel(option ? option.value : '');
+                          setFormData({ ...formData, model: option ? option.value : '' });
+                        }}
+                        placeholder={t('form_select_placeholder')}
+                        isClearable
+                        isDisabled={!selectedBrand}
+                        classNamePrefix="react-select"
+                        styles={{ menu: base => ({ ...base, zIndex: 100 }) }}
                       />
                     </div>
                     <div className="space-y-2">
@@ -768,29 +1030,6 @@ export default function QuoteForm() {
                       </select>
                     </div>
                     <div className="space-y-2">
-                      <label htmlFor="vehicleType" className="block text-sm font-semibold text-secondary-500">{t('form_vehicleType')}</label>
-                      <select 
-                        id="vehicleType" 
-                        name="vehicleType" 
-                        value={formData.vehicleType} 
-                        onChange={handleChange} 
-                        disabled={isVehicleUsed(formData.year)}
-                        className={`w-full px-3 lg:px-4 py-2.5 lg:py-3 rounded-lg lg:rounded-xl border border-gray-200 focus:ring-2 focus:ring-secondary-500 focus:border-transparent transition-all duration-200 bg-white/70 backdrop-blur-sm text-sm lg:text-base ${
-                          isVehicleUsed(formData.year) ? 'bg-gray-100 cursor-not-allowed opacity-75' : ''
-                        }`}
-                        required
-                      >
-                        <option value="">{t('form_select_placeholder')}</option>
-                        <option value="neuf">{t('form_vehicleType_option_new')}</option>
-                        <option value="occasion">{t('form_vehicleType_option_used')}</option>
-                      </select>
-                      {isVehicleUsed(formData.year) && (
-                        <p className="text-sm text-amber-600 bg-amber-50 border border-amber-200 rounded-lg p-2 mt-2">
-                          <span className="font-medium">Automatique:</span> Véhicule classé comme "occasion" car il a plus de 3 ans.
-                        </p>
-                      )}
-                    </div>
-                    <div className="space-y-2">
                       <label htmlFor="priceEur" className="block text-sm font-semibold text-secondary-500">{t('form_priceEur')}</label>
                       <div className="relative">
                         <input 
@@ -806,23 +1045,6 @@ export default function QuoteForm() {
                       </div>
                     </div>
                     <div className="space-y-2">
-                      <label htmlFor="engineType" className="block text-sm font-semibold text-secondary-500">{t('form_engineType')}</label>
-                      <select 
-                        id="engineType" 
-                        name="engineType" 
-                        value={formData.engineType} 
-                        onChange={handleChange} 
-                        className="w-full px-3 lg:px-4 py-2.5 lg:py-3 rounded-lg lg:rounded-xl border border-gray-200 focus:ring-2 focus:ring-secondary-500 focus:border-transparent transition-all duration-200 bg-white/70 backdrop-blur-sm text-sm lg:text-base" 
-                        required
-                      >
-                        <option value="">{t('form_select_placeholder')}</option>
-                        <option value="diesel">{t('form_engineType_option_diesel')}</option>
-                        <option value="essence">{t('form_engineType_option_essence')}</option>
-                        <option value="hybride">{t('form_engineType_option_hybride')}</option>
-                        <option value="electrique">{t('form_engineType_option_electrique')}</option>
-                      </select>
-                    </div>
-                    <div className="space-y-2">
                       <label htmlFor="cylindree" className="block text-sm font-semibold text-secondary-500">{t('form_cylindree')}</label>
                       <input 
                         type="number" 
@@ -835,6 +1057,8 @@ export default function QuoteForm() {
                     </div>
                   </div>
                 </div>
+
+
 
                 {/* Location & Additional Info Section */}
                 <div className="space-y-4 lg:space-y-6">
@@ -880,32 +1104,6 @@ export default function QuoteForm() {
                         <MapPin className="absolute left-3 lg:left-4 top-3.5 w-4 h-4 lg:w-5 lg:h-5 text-gray-400" />
                       </div>
                     </div>
-                    <div className="space-y-2">
-                      <label htmlFor="urgency" className="block text-sm font-semibold text-secondary-500">{t('form_urgency')}</label>
-                      <select 
-                        id="urgency" 
-                        name="urgency" 
-                        value={formData.urgency} 
-                        onChange={handleChange} 
-                        className="w-full px-3 lg:px-4 py-2.5 lg:py-3 rounded-lg lg:rounded-xl border border-gray-200 focus:ring-2 focus:ring-primary-500 focus:border-transparent transition-all duration-200 bg-white/70 backdrop-blur-sm text-sm lg:text-base"
-                      >
-                        <option value="">{t('form_select_placeholder')}</option>
-                        <option value="basse">{t('form_urgency_option_low')}</option>
-                        <option value="moyenne">{t('form_urgency_option_medium')}</option>
-                        <option value="haute">{t('form_urgency_option_high')}</option>
-                      </select>
-                    </div>
-                  </div>
-                  <div className="space-y-2">
-                    <label htmlFor="message" className="block text-sm font-semibold text-secondary-500">{t('form_message')}</label>
-                    <textarea 
-                      id="message" 
-                      name="message" 
-                      value={formData.message} 
-                      onChange={handleChange} 
-                      rows={4} 
-                      className="w-full px-3 lg:px-4 py-2.5 lg:py-3 rounded-lg lg:rounded-xl border border-gray-200 focus:ring-2 focus:ring-primary-500 focus:border-transparent transition-all duration-200 bg-white/70 backdrop-blur-sm text-sm lg:text-base resize-none"
-                    ></textarea>
                   </div>
                 </div>
 
@@ -1045,6 +1243,22 @@ export default function QuoteForm() {
                           <Download className="w-5 h-5" />
                         )}
                         <span>{isGeneratingPDF ? t('pdf_generating') : t('result_download_pdf')}</span>
+                      </div>
+                    </button>
+                    
+                    <button 
+                      onClick={downloadPDF} 
+                      disabled={isGeneratingPDF} 
+                      className="group relative overflow-hidden flex-1 px-6 py-3 rounded-xl font-medium bg-gradient-to-r from-green-500 to-green-600 hover:from-green-600 hover:to-green-700 text-white transition-all duration-300 transform hover:scale-105 shadow-lg disabled:opacity-50"
+                    >
+                      <div className="absolute inset-0 bg-white opacity-0 group-hover:opacity-10 transition-opacity duration-300"></div>
+                      <div className="relative flex items-center justify-center space-x-2">
+                        {isGeneratingPDF ? (
+                          <div className="w-5 h-5 border-2 border-white border-t-transparent rounded-full animate-spin"></div>
+                        ) : (
+                          <FileDown className="w-5 h-5" />
+                        )}
+                        <span>{isGeneratingPDF ? t('pdf_generating') : t('button_download_pdf')}</span>
                       </div>
                     </button>
                     <button

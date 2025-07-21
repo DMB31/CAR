@@ -51,20 +51,7 @@ export default function Hero() {
             </div>
 
             {/* Stats */}
-            <div className="flex flex-col sm:flex-row items-center justify-center lg:justify-start space-y-4 sm:space-y-0 sm:space-x-6 lg:space-x-8 pt-6 lg:pt-8 border-t border-gray-200 rtl:space-x-reverse">
-              <div className="text-center">
-                <div className="text-xl sm:text-2xl font-bold text-primary-500">{t('stat1_value')}</div>
-                <div className="text-xs sm:text-sm text-secondary-500">{t('stat1_label')}</div>
-              </div>
-              <div className="text-center">
-                <div className="text-xl sm:text-2xl font-bold text-primary-500">{t('stat2_value')}</div>
-                <div className="text-xs sm:text-sm text-secondary-500">{t('stat2_label')}</div>
-              </div>
-              <div className="text-center">
-                <div className="text-xl sm:text-2xl font-bold text-primary-500">{t('stat3_value')}</div>
-                <div className="text-xs sm:text-sm text-secondary-500">{t('stat3_label')}</div>
-              </div>
-            </div>
+            
           </div>
 
           {/* Visual */}
