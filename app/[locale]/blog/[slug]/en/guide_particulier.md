@@ -1,178 +1,73 @@
 ---
-title: "Complete Guide: Importing a Vehicle to Algeria in 2025 - Procedures, Costs, and Regulations"
-excerpt: "An up-to-date guide on the regulations, administrative steps, and taxes applicable for importing a vehicle into Algeria for resident individuals in 2025."
-author: "The Editorial Team"
-publishedAt: "2025-07-17"
-tags: ["Import", "Vehicle", "Algeria", "Customs", "Regulations"]
-category: "Individual"
+title: "2025 Guide: Importing a Vehicle Under 3 Years Old in Algeria (Individuals)"
+excerpt: "The complete and updated guide for resident individuals wishing to import a vehicle under 3 years old into Algeria. Conditions, taxes, documents, and official sources."
+publishedAt: "2025-01-10"
+author: "Import Auto Algérie"
+tags: ['import', 'used vehicle', 'customs', 'individual', '2025 regulation']
 ---
 
-# Complete Guide: Importing a Vehicle to Algeria in 2025 - Procedures, Costs, and Regulations
+## Complete 2025 Guide: Importing a Vehicle Under 3 Years Old in Algeria as an Individual
 
-_By The Editorial Team_  
-_Updated on July 17, 2025_
+The import of vehicles under 3 years old by resident individuals in Algeria is once again authorized, a long-awaited decision that opens up new prospects for many Algerians. However, this procedure is governed by strict regulations that are essential to master to carry out one's project successfully.
 
-## Introduction: An Evolving Automotive Market
+This detailed guide, updated with the most recent information for 2025, explains all the steps, conditions, and applicable taxes to import your car legally and with peace of mind.
 
-Since the partial lifting of the ban on vehicle imports in 2023, Algeria has established a strict regulatory framework for resident individuals. This guide summarizes the rules in force in 2025, based on the latest official texts and customs practices, to assist you in your procedures in full compliance 14.
+### 1. Who Can Import and How Often?
 
-## I. Vehicle Eligibility Conditions
+The right to import a used vehicle is granted to **any resident individual in Algeria**. The main condition is a frequency limitation: you can only perform this operation **once every three (3) years**.
 
-### 1. Age and Vehicle Type
+The payment for the vehicle must be made from your **own foreign currency funds**, which must be held in a foreign currency account in Algeria.
 
-**Used Vehicles:**
+### 2. What Types of Vehicles Are Allowed?
 
-- **Maximum age:** 3 years between the first registration and the date of customs clearance in Algeria 14.
-- **Authorized types:**
-  - Passenger cars (≤ 9 seats).
-  - Light utility vehicles (total weight ≤ 3.5 tons) 16.
+The regulations are specific regarding the age and engine type of the vehicles.
 
-**New Vehicles:**
+#### Vehicle Age
+The vehicle must be **less than 3 years old** at the time of customs clearance. This age is calculated from the date of its first registration abroad, as mentioned on the registration certificate.
 
-- **Maximum mileage:** 100 km for private cars and vans 2.
+#### Authorized Engine Types
+You can import the following types of vehicles:
+-   **Gasoline**
+-   **Hybrid (Gasoline/Electric)**
+-   **Electric**
 
-### 2. Engine Type
+> **Major point of caution:** The import of vehicles with a **Diesel engine is strictly forbidden** under this scheme.
 
-**Authorized:**
+### 3. Customs Clearance: Calculation of Taxes and Duties
 
-- Gasoline, electric, hybrid (gasoline/electric) 14.
+This is the most technical step, but the Finance Law has introduced a very advantageous preferential tax regime.
 
-**Prohibited:**
+#### Basis of Calculation
+Taxes are calculated on the **CIF value** of the vehicle (Cost, Insurance, Freight), i.e., its purchase price plus transport and insurance costs to the Algerian port. If the customs administration deems the declared value too low, it can reassess it based on reference schedules (like the Argus).
 
-- Diesel (except for holders of a Certificate of Change of Residence - CCR) 19.
+#### Reductions on Duties and Taxes
+The main advantage of this scheme lies in the tax reductions granted based on engine type and displacement:
+-   **Electric vehicle:** An exceptional reduction of **80%** on the total amount of duties and taxes.
+-   **Gasoline or hybrid vehicle (displacement ≤ 1800 cm³):** A reduction of **50%**.
+-   **Gasoline or hybrid vehicle (displacement > 1800 cm³):** A reduction of **20%**.
 
-### 3. Vehicle Condition
+### 4. Essential Documents
 
-- Absence of major defects (engine, chassis, safety).
-- Compliance with Algerian environmental and safety standards 4.
+The meticulous preparation of your file is the key to smooth customs clearance. Here are the documents to provide:
+-   **Original purchase invoice** for the vehicle.
+-   **Original registration certificate** from the country of origin (car registration document).
+-   **Certificate of conformity** issued by the manufacturer or an authorized representative.
+-   A favorable **technical inspection report** less than 3 months old, issued in the country of origin, attesting to the vehicle's good general condition.
+-   A certified translation of the documents if they are not in French or Arabic.
 
-## II. Mandatory Documents
+### 5. Is There a Resale Limitation?
 
-The list of required documents is rigorous:
+To combat speculation, a non-transferability clause is applied. The vehicle imported under this framework cannot be resold before a period of **three (3) years** from the date of its registration in Algeria.
 
-**Identification documents:**
+---
 
-- Copy of the national identity card or resident card (for foreigners) 4.
+### Conclusion
 
-**Proof of residence:**
+Importing a vehicle under 3 years old is a real opportunity for individuals in Algeria. By scrupulously respecting the conditions (frequency, engine type, age) and by carefully preparing your file, you can bring your project to fruition while benefiting from significant tax advantages.
 
-- Certificate of residence in Algeria 4.
+### Official Sources
 
-**Vehicle-related documents:**
-
-- Certificate of conformity (Algerian or European standards) 16.
-- Detailed purchase invoice (price, technical characteristics).
-- Foreign registration certificate.
-- Expert report less than 3 months old attesting to the good condition (issued in the country of origin) 14.
-
-**Authorizations:**
-
-- For new vehicles: Prior license (for dealers) 1.
-
-**Note:** Holders of a CCR (Certificate of Change of Residence) must add a consular authorization and a certificate of deregistration from the commercial register (for merchants) 9.
-
-## III. Detailed Administrative Steps
-
-### Step 1: Application for Authorization (ANIV)
-
-**Obtaining:**
-
-- Submit a file to the National Vehicle Registration Agency (ANIV).
-- **Required documents:** Certificate of conformity, invoice, certificate of origin 1.
-- **Timeline:** Variable, but allow 2 to 4 weeks.
-
-### Step 2: Customs Clearance
-
-**Value check:**
-
-- Customs compares the declared price with the Argus value (reference site) 1.
-- In case of a discrepancy, payment of a supplement (without penalty for non-commercial use) 1.
-
-**Customs clearance:**
-
-- Mandatory transfer to "dry ports" (secondary customs zones) since June 2025 to relieve port congestion 3.
-- **Documents to be presented:** Complete file + tax payment receipt.
-
-### Step 3: Technical Expertise
-
-**Verification:**
-
-- By an expert approved by the Ministry of Mines.
-- **Control of technical and environmental conformity** 4.
-- **Risks:**
-  - Non-conformity → Re-export at the importer's expense 4.
-
-### Step 4: Registration
-
-**Issuance of the registration card:**
-
-- Upon presentation of the expert's report and customs documents.
-- **Timeline:** 1 month maximum after the vehicle's arrival (temporary passage titles) 4.
-
-## IV. Applicable Taxes and Duties
-
-The fiscal cost represents ~51% of the vehicle's value:
-
-| Tax | Rate | Application Base |
-| :--- | :--- | :--- |
-| Customs duties | 30% | CIF Value (Cost + Insurance + Freight) |
-| Solidarity Contribution Tax (TCS) | 2% | CIF Value |
-| VAT | 19% | CIF Value + Customs duties |
-| **Total** | **51%** | |
-
-**Reference price list:**
-
-- Since 2025, customs have been using an official grid to value vehicles (e.g., a 2025 Tiguan 2.0L = €46,480) 7.
-
-**Exemptions:**
-
-- Civilian disabled, war invalids (>60%), CCR holders (ceiling: €60,000) 29.
-
-## V. Legal Limits and Restrictions
-
-### 1. Use and Transfer
-
-**Strictly personal use:**
-
-- Prohibition of resale before 3 years (stamp "prohibition of transfer" on the documents) 8.
-- **Exceptions:**
-  - Partial reimbursement of tax benefits if sold early:
-    - 100% if < 12 months,
-    - 66% if 12-24 months,
-    - 33% if 24-36 months 8.
-
-### 2. Import Frequency
-
-**Quota:**
-
-- 1 vehicle every 3 years per individual 4.
-
-### 3. Regulatory References
-
-- **Executive Decree No. 23-74 (February 20, 2023):** Legal framework for the import of used vehicles 4.
-- **2025 Finance Law:** Restrictions on the sale of vehicles 8.
-- **Executive Decree No. 20-227 (2020):** Rules for new car dealers 2.
-
-## VI. Pitfalls to Avoid and Practical Advice
-
-**Choose the right supplier:**
-
-- China has become the leading exporter to Algeria (attractive prices, recent models) 36.
-
-**Shipping cost:**
-
-- Allow between 1,000 and 2,500 USD for sea freight (duration: 15-45 days) 6.
-
-**Check authorized ports:**
-
-- Algiers offers the most competitive rates 36.
-
-## Conclusion: A Complex but Accessible Process
-
-Importing a vehicle to Algeria remains framed by strict rules but now offers a credible alternative to the shortage of new cars. The key to success lies in:
-
-- Scrupulous respect for eligibility criteria,
-- Meticulous preparation of documents,
-- Anticipation of fiscal costs (≥ 51% of the value).
-
-With the modernization of ports and the harmonization of procedures, this controlled liberalization could eventually boost the Algerian automotive market 378. 
+For any verification or additional information, it is imperative to consult the official sources:
+-   **General Directorate of Algerian Customs:** [www.douane.gov.dz](https://www.douane.gov.dz)
+-   **Executive Decree No. 23-74 of February 20, 2023** establishing the conditions and procedures for customs clearance and conformity control of used passenger and utility vehicles acquired by resident individuals.
+-   **The current Finance Law.** 

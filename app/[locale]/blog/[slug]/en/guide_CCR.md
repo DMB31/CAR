@@ -1,114 +1,74 @@
 ---
-title: "Complete Guide 2025: Importing a Vehicle to Algeria with the CCR Consular Card"
-excerpt: "Discover all the steps, conditions, and tips for importing your vehicle duty-free thanks to the CCR scheme. Practical guide updated for 2025."
-author: "Expert Auto Import"
-publishedAt: "2024-12-01"
-tags: ["CCR", "Import", "Vehicle", "Algeria", "Customs"]
-category: "CCR"
+title: "2025 Guide: Importing a Vehicle to Algeria with a CCR"
+excerpt: "The complete guide for Algerians living abroad on importing a new vehicle with a Certificate of Change of Residence (CCR). Benefits, conditions, procedures, and documents."
+publishedAt: "2025-01-10"
+author: "Import Auto Algérie"
+tags: ['CCR', 'import', 'new vehicle', 'customs', 'consulate', 'expat', '2025 regulation']
 ---
 
-# Complete Guide 2025: Importing a Vehicle to Algeria with the CCR Consular Card
-For Algerians residing abroad, the Certificate of Change of Residence (CCR) scheme offers a unique opportunity to import a vehicle free of customs duties and taxes upon a final return to Algeria. This guide summarizes the rules in force in 2025, based on recent legal texts and consular practices.
+## Complete 2025 Guide: Vehicle Import via Certificate of Change of Residence (CCR)
 
-## Eligibility Conditions for the CCR Scheme
-To benefit from the CCR, Algerian nationals must meet strict criteria:
+The Certificate of Change of Residence (CCR) is a government scheme that allows Algerian nationals permanently returning to the country to benefit from significant customs advantages on vehicle imports.
 
-### Administrative status:
+This guide, updated for 2025, details the rigorous conditions, tax benefits, limitations, and procedure to follow to successfully complete your import project.
 
-- Be registered in the main register at an Algerian consulate for at least three years 16.
-- Be over 19 years old 18.
-- Have never benefited from the CCR before (for oneself or one's spouse) 13.
+### 1. What is the CCR and what are its benefits?
 
-### Proof of residence:
+The CCR is a document issued by the Algerian consulate in your country of residence, attesting to your permanent return to Algeria. Its main advantage is allowing the customs clearance of a **new** passenger vehicle with a **very significant reduction on customs duties and taxes**.
 
-- Provide proof of uninterrupted stay abroad for the last three years: salary slips (employees), internship or schooling certificates (students), or equivalent documents depending on the status 18.
-- For single, widowed, or divorced women: a birth certificate with a specific mention is mandatory 1.
+This reduction can range from partial to total exemption depending on the vehicle's engine capacity, representing considerable savings.
 
-## Authorized Vehicles: Technical and Environmental Restrictions
-The CCR only covers new vehicles, under certain conditions:
+### 2. Eligibility Conditions: Who can benefit?
 
-| Vehicle Type | Maximum Engine Capacity | Other Constraints |
-| --- | --- | --- |
-| Gasoline | 1,800 cm³ | Purchase invoice dated < 1 year 18 |
-| Diesel | 2,000 cm³ | Mileage ≤ 100 km 2 |
-| Utility | GVW ≤ 5.95 tonnes | New only 1 |
-| Two-wheelers | Subject to registration | Excludes quads/jet skis 1 |
+The criteria to obtain a CCR are strict and cumulative:
+-   **Nationality:** Must be an Algerian national.
+-   **Age:** Must be over 19 years old.
+-   **Consular Registration:** Must have been registered with the Algerian consulate of your place of residence for **at least three (3) uninterrupted years**.
+-   **History:** Must have **never** previously benefited from a CCR. This is a one-time right.
+-   **Stay Abroad:** Must justify an effective and uninterrupted stay abroad of at least three years at the time of application.
 
-### Exclusions:
+### 3. The Vehicle: Limitations and Constraints
 
-- Used vehicles, even recent ones.
-- Hybrid or electric engines are allowed but not exempt if they exceed the thresholds 57.
-- Vehicles must meet Algerian safety standards (ABS, airbags, speed limiter) 7.
+The choice of vehicle is also highly regulated.
 
-## Tax Exemptions and Value Ceilings
-The CCR allows for a total exemption from customs duties and taxes, provided that the ceilings are respected:
+#### Vehicle Condition
+The vehicle must be **new** and **never previously registered**, either in the country of purchase or elsewhere.
 
-- 10 million DA (∼€60,000) for workers, merchants, and retirees 13.
-- 8 million DA (∼€48,000) for students and interns 1.
+#### Engine Capacity Limitations
+Engine capacity ceilings are in place:
+-   **Gasoline or Hybrid Engine:** ≤ 1800 cm³.
+-   **Diesel Engine:** ≤ 2000 cm³.
 
-### Warning:
+> **Warning:** Any vehicle exceeding these capacities will be refused customs clearance under the CCR scheme.
 
-- Any excess in value or engine capacity will result in the application of the general customs regime 18.
-- If the vehicle is resold before 3 years, the owner must repay all or part of the tax benefits:
-  - 100% if sold < 12 months,
-  - 66% between 12-24 months,
-  - 33% between 24-36 months 47.
+#### Value Cap
+The value of the vehicle (purchase price on the invoice) **must not exceed a certain amount** set by the current regulations (consult the consulate for the exact value at the time of purchase).
 
-## Step-by-Step Procedure: From Application to Registration
-### 1. Submission of the Preliminary File to the Consulate
-#### Common documents:
+### 4. Procedure and Required Documents
 
-- Handwritten request to the consul.
-- Copy of the consular registration card + passport.
-- Residence permit + proof of address.
-- Sworn statement of not having previously benefited from the CCR 18.
-- Specific documents depending on the status (e.g., pay slips for employees, Pôle Emploi certificate for the unemployed) 8.
+The CCR application is made **before the final return** to Algeria, at your consulate.
 
-→ Processing time: 15 days after submission 1.
+#### Documents to provide (non-exhaustive list):
+1.  **CCR application form** provided by the consulate.
+2.  **Original and valid consular registration card**.
+3.  **Algerian passport** and residence permit of the country of residence.
+4.  **Proof of residence for the last three years** (employment contracts, pay slips, rent receipts, etc.). The type of document depends on your status (employee, student, retiree...).
+5.  **Sworn statement** of never having benefited from a CCR.
+6.  **Pro-forma or final purchase invoice** for the new vehicle, clearly stating the technical specifications.
 
-### 2. Purchase of the Vehicle and Supplementary File
-Purchase the vehicle only after consular approval 13.
+> **Crucial advice:** Do not purchase the vehicle until you have obtained a-principled approval from the consulate. Once the CCR is obtained, it is valid for **six (6) months** to carry out customs clearance in Algeria.
 
-#### Documents to be provided for customs clearance:
+### 5. Inalienability of the Vehicle
 
-- Original invoice of the vehicle.
-- European Certificate of Conformity (COC).
-- Provisional registration card (with Algerian address) 68.
+The vehicle imported under the CCR scheme is non-transferable. It cannot be sold or transferred for a period determined by law, generally **three (3) years**.
 
-### 3. Customs Clearance and Registration in Algeria
-#### Mandatory deadlines:
+---
 
-- Import the vehicle within one month of obtaining the CCR.
-- Move personal effects within 6 months 1.
+### Conclusion
 
-**New in 2025:** Customs clearance possible in approved dry ports (e.g., inland customs zones) to relieve congestion at seaports 11.
+The CCR is a boon for Algerians returning to the country, but obtaining it is conditional on strict adherence to rigorous criteria. The key to success lies in anticipating the procedures and compiling a flawless application file at your consulate.
 
-**Technical inspection:** Conformity expertise by an organization approved by the Ministry of Mines 5.
+### Official Sources
 
-**Registration:** Obtain the Algerian registration card through local services.
-
-## Legal References
-- Finance Law 2021 (Art. 36) and 2025 (Art. 110): Value ceilings and resale rules 27.
-- Executive Decree No. 23-74 (2023): Conditions for customs clearance of vehicles 5.
-- Algerian Customs Code: Penalties for non-compliance with deadlines 19.
-- Finance Law 2016 (Art. 136): Calculation of stamp duties (€1 = 100 DA) 1.
-
-## Practical Advice and Pitfalls to Avoid
-- Do not purchase the vehicle before consular approval, otherwise it may be refused 3.
-- Check the environmental compliance of the vehicle (applicable Euro standards).
-- Regularly consult the customs (www.douane.gov.dz) and consulate websites for updates 49.
-
-### User testimony:
-"Thanks to the CCR, I imported a Renault Clio in 2024. The most crucial thing? Having all the documents translated and legalized before departure." — Karim, resident in France 3.
-
-## Appendix: Summary of Documents by Profile
-
-| Profile | Specific Documents |
-| --- | --- |
-| Employee | Work certificates + pay slips (3 years) |
-| Student | Schooling/internship certificates (3 years) |
-| Merchant | Commercial register + certificate of deregistration |
-| Retiree | Pension certificate (3 years) |
-| Job seeker | Pôle Emploi/Assedic certificate (3 years) 8 |
-
-For a successful return to Algeria, the CCR remains a valuable but regulated tool. Rigorous preparation of documents and respect for deadlines are the key to avoiding disappointments. 
+-   **Consulate of Algeria** in your country of residence (the primary and most reliable source).
+-   **General Directorate of Algerian Customs:** [www.douane.gov.dz](https://www.douane.gov.dz) 

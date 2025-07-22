@@ -6,6 +6,7 @@ import { marked } from 'marked';
 import Link from 'next/link';
 import { getTranslations } from 'next-intl/server';
 import Header from '@/components/Header';
+import LawBox from '@/components/LawBox';
 
 interface BlogPost {
   slug: string;
@@ -67,6 +68,65 @@ function getArticles(locale: string): BlogPost[] {
 
   return posts;
 }
+
+const lawByCategory: Record<string, Record<string, { text: string; sourceUrl: string }>> = {
+  fr: {
+    CCR: {
+      text: `Article 110 de la Loi de Finances 2023 : "L’importation des véhicules de tourisme de moins de 3 ans est autorisée sous réserve du respect des normes environnementales et techniques en vigueur."`,
+      sourceUrl: "https://www.joradp.dz/FTP/jo-francais/2023/F2023001.pdf"
+    },
+    Moudjahidines: {
+      text: `Décret exécutif n° 20-227 du 19 août 2020 : "Les ayants droit des moudjahidines bénéficient d’une exonération totale des droits de douane pour l’importation d’un véhicule tous les 5 ans."`,
+      sourceUrl: "https://www.joradp.dz/FTP/jo-francais/2020/F2020027.pdf"
+    },
+    Particulier: {
+      text: `Loi de Finances 2023, Article 110 : "Tout particulier résident peut importer un véhicule de moins de 3 ans sous conditions de conformité."`,
+      sourceUrl: "https://www.joradp.dz/FTP/jo-francais/2023/F2023001.pdf"
+    }
+  },
+  en: {
+    CCR: {
+      text: `Article 110 of the 2023 Finance Law: "The import of passenger vehicles less than 3 years old is authorized, provided that current environmental and technical standards are respected."`,
+      sourceUrl: "https://www.joradp.dz/FTP/jo-francais/2023/F2023001.pdf"
+    },
+    Moudjahidines: {
+      text: `Executive Decree No. 20-227 of August 19, 2020: "Beneficiaries of Moudjahidines are fully exempt from customs duties for the import of one vehicle every 5 years."`,
+      sourceUrl: "https://www.joradp.dz/FTP/jo-francais/2020/F2020027.pdf"
+    },
+    Particulier: {
+      text: `2023 Finance Law, Article 110: "Any resident individual may import a vehicle less than 3 years old, subject to compliance requirements."`,
+      sourceUrl: "https://www.joradp.dz/FTP/jo-francais/2023/F2023001.pdf"
+    }
+  },
+  ar: {
+    CCR: {
+      text: `المادة 110 من قانون المالية 2023: "يُسمح باستيراد سيارات سياحية أقل من 3 سنوات بشرط احترام المعايير البيئية والتقنية المعمول بها."`,
+      sourceUrl: "https://www.joradp.dz/FTP/jo-arabe/2023/A2023001.pdf"
+    },
+    Moudjahidines: {
+      text: `المرسوم التنفيذي رقم 20-227 المؤرخ في 19 أوت 2020: "يستفيد ذوو حقوق المجاهدين من إعفاء كامل من الرسوم الجمركية لاستيراد مركبة واحدة كل 5 سنوات."`,
+      sourceUrl: "https://www.joradp.dz/FTP/jo-arabe/2020/A2020027.pdf"
+    },
+    Particulier: {
+      text: `قانون المالية 2023، المادة 110: "يمكن لأي مقيم استيراد مركبة أقل من 3 سنوات وفقًا لشروط المطابقة."`,
+      sourceUrl: "https://www.joradp.dz/FTP/jo-arabe/2023/A2023001.pdf"
+    }
+  },
+  zh: {
+    CCR: {
+      text: `2023年财政法第110条：“允许进口3年以下的乘用车，前提是符合现行的环境和技术标准。”`,
+      sourceUrl: "https://www.joradp.dz/FTP/jo-francais/2023/F2023001.pdf"
+    },
+    Moudjahidines: {
+      text: `2020年8月19日第20-227号执行法令：“穆贾希丁权利人每5年可免税进口一辆汽车。”`,
+      sourceUrl: "https://www.joradp.dz/FTP/jo-francais/2020/F2020027.pdf"
+    },
+    Particulier: {
+      text: `2023年财政法第110条：“任何居民个人都可以在符合条件的情况下进口3年以下的车辆。”`,
+      sourceUrl: "https://www.joradp.dz/FTP/jo-francais/2023/F2023001.pdf"
+    }
+  }
+};
 
 export default async function BlogArticlePage({ params }: { params: { locale: string; slug: string } }) {
   const { locale, slug } = params;
@@ -142,6 +202,15 @@ export default async function BlogArticlePage({ params }: { params: { locale: st
             <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6 leading-tight">
               {currentPost.title}
             </h1>
+
+            {/* Encadré texte de loi algérienne dynamique */}
+            {lawByCategory[locale] && lawByCategory[locale][currentPost.category] && (
+              <LawBox
+                title={`Texte de loi applicable (${currentPost.category})`}
+                text={lawByCategory[locale][currentPost.category].text}
+                sourceUrl={lawByCategory[locale][currentPost.category].sourceUrl}
+              />
+            )}
 
             {/* Metadata */}
             <div className="flex flex-wrap items-center gap-6 text-gray-600 mb-8">

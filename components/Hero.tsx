@@ -58,7 +58,7 @@ export default function Hero() {
           <div className="relative order-first lg:order-last">
             <div className="aspect-[4/3] bg-gray-100 rounded-xl lg:rounded-2xl overflow-hidden shadow-xl lg:shadow-2xl relative">
               <Image
-                src="/Logos/zhivko-minkov-5kIyOuHWl4U-unsplash.jpg"
+                src="/Logos/AUDI_A3.jpg"
                 alt={t('image_alt')}
                 fill
                 className="object-cover"

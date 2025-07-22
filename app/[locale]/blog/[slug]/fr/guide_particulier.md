@@ -1,172 +1,73 @@
-Guide Complet : Importer un Véhicule en Algérie en 2025 - Procédures, Coûts et Règlements
-Par l’Équipe Éditoriale
-Mis à jour le 17 juillet 2025
+---
+title: "Guide 2025 : Importer un Véhicule de Moins de 3 Ans en Algérie (Particuliers)"
+excerpt: "Le guide complet et à jour pour les particuliers résidents souhaitant importer un véhicule de moins de 3 ans en Algérie. Conditions, taxes, documents et sources officielles."
+publishedAt: "2025-01-10"
+author: "Import Auto Algérie"
+tags: ['importation', 'véhicule occasion', 'douane', 'particulier', 'réglementation 2025']
+---
 
-Introduction : Un Marché Automobile en Évolution
-Depuis la levée partielle de l’interdiction d’importer des véhicules en 2023, l’Algérie a instauré un cadre réglementaire strict pour les particuliers résidents. Ce guide synthétise les règles en vigueur en 2025, issues des derniers textes officiels et des pratiques douanières, afin de vous accompagner dans vos démarches en toute conformité 14.
+## Guide Complet 2025 : Importer un Véhicule de Moins de 3 Ans en Algérie en tant que Particulier
 
-I. Conditions d’Éligibilité des Véhicules
-1. Âge et Type de Véhicule
-Véhicules d’occasion :
+L'importation de véhicules de moins de 3 ans par les particuliers résidents en Algérie est de nouveau autorisée, une décision très attendue qui ouvre de nouvelles perspectives pour de nombreux Algériens. Cependant, cette procédure est encadrée par une réglementation stricte qu'il est essentiel de maîtriser pour mener à bien son projet.
 
-Âge maximal : 3 ans entre la première mise en circulation et la date de dédouanement en Algérie 14.
+Ce guide détaillé, mis à jour avec les informations les plus récentes pour 2025, vous explique toutes les étapes, conditions, et taxes applicables pour importer votre voiture en toute légalité et sérénité.
 
-Types autorisés :
+### 1. Qui peut importer et à quelle fréquence ?
 
-Voitures de tourisme (≤ 9 places).
+Le droit d'importer un véhicule d'occasion est accordé à **tout particulier résident en Algérie**. La condition principale est une limitation de fréquence : vous ne pouvez réaliser cette opération qu'**une seule fois tous les trois (3) ans**.
 
-Utilitaires légers (poids total ≤ 3,5 tonnes) 16.
+Le paiement du véhicule doit obligatoirement être effectué sur vos **fonds propres en devises**, qui doivent être domiciliés dans un compte en devises en Algérie.
 
-Véhicules neufs :
+### 2. Quels types de véhicules sont autorisés ?
 
-Kilométrage maximal : 100 km pour les particuliers et camionnettes 2.
+La réglementation est précise concernant l'âge et la motorisation des véhicules.
 
-2. Motorisation
-Autorisées :
+#### Âge du véhicule
+Le véhicule doit avoir **moins de 3 ans** d'âge au moment des formalités de dédouanement. Cet âge est calculé à partir de la date de sa première mise in circulation à l'étranger, mentionnée sur le certificat d'immatriculation.
 
-Essence, électrique, hybride (essence/électrique) 14.
+#### Motorisations autorisées
+Vous pouvez importer les types de véhicules suivants :
+-   **Essence**
+-   **Hybride (Essence/Électrique)**
+-   **Électrique**
 
-Interdites :
+> **Point de vigilance majeur :** L'importation de véhicules avec une motorisation **Diesel est formellement interdite** dans le cadre de ce dispositif.
 
-Diesel (sauf exception pour les détenteurs d’un Certificat de Changement de Résidence - CCR) 19.
+### 3. Dédouanement : Le Calcul des Taxes et Droits de Douane
 
-3. État du Véhicule
-Absence de défauts majeurs (moteur, châssis, sécurité).
+C'est l'étape la plus technique, mais la Loi de Finances a introduit un régime fiscal préférentiel très avantageux.
 
-Conformité aux normes environnementales et de sécurité algériennes 4.
+#### Base de calcul
+Les taxes sont calculées sur la **valeur CIF** du véhicule (Coût, Assurance, Fret), c'est-à-dire son prix d'achat majoré des frais de transport et d'assurance jusqu'au port algérien. Si l'administration douanière juge la valeur déclarée trop basse, elle peut la réévaluer sur la base de barèmes (type Argus).
 
-II. Documents Obligatoires
-La liste des pièces à fournir est rigoureuse :
+#### Abattements sur les droits et taxes
+Le principal avantage de ce dispositif réside dans les réductions fiscales accordées en fonction de la motorisation et de la cylindrée :
+-   **Véhicule électrique :** Abattement exceptionnel de **80%** sur le montant total des droits et taxes.
+-   **Véhicule essence ou hybride (cylindrée ≤ 1800 cm³) :** Abattement de **50%**.
+-   **Véhicule essence ou hybride (cylindrée > 1800 cm³) :** Abattement de **20%**.
 
-Pièces d’identité :
+### 4. Les Documents Indispensables
 
-Copie de la carte d’identité nationale ou carte de résident (pour étrangers) 4.
+La préparation méticuleuse de votre dossier est la clé d'un dédouanement sans encombre. Voici les pièces à fournir :
+-   **Facture d'achat originale** du véhicule.
+-   **Certificat d'immatriculation original** du pays d'origine (carte grise).
+-   **Certificat de conformité** délivré par le constructeur ou un mandataire agréé.
+-   Un **rapport de contrôle technique** favorable datant de moins de 3 mois, établi dans le pays d'origine, qui atteste du bon état général du véhicule.
+-   Une traduction certifiée conforme des documents si ceux-ci ne sont pas en français ou en arabe.
 
-Justificatifs de résidence :
+### 5. Y a-t-il une limitation de revente ?
 
-Certificat de résidence en Algérie 4.
+Pour lutter contre la spéculation, une clause d'incessibilité est appliquée. Le véhicule importé dans ce cadre ne peut être revendu avant une période de **trois (3) ans** à compter de la date de son immatriculation en Algérie.
 
-Documents liés au véhicule :
+---
 
-Certificat de conformité (normes algériennes ou européennes) 16.
+### Conclusion
 
-Facture d’achat détaillée (prix, caractéristiques techniques).
+L'importation d'un véhicule de moins de 3 ans est une opportunité réelle pour les particuliers en Algérie. En respectant scrupuleusement les conditions (fréquence, motorisation, âge) et en préparant soigneusement votre dossier, vous pouvez concrétiser votre projet en bénéficiant d'avantages fiscaux significatifs.
 
-Certificat d’immatriculation étranger.
+### Sources Officielles
 
-Rapport d’expertise de moins de 3 mois attestant du bon état (établi dans le pays d’origine) 14.
-
-Autorisations :
-
-Pour les véhicules neufs : Licence préalable (pour les concessionnaires) 1.
-
-À noter : Les détenteurs d’un CCR (Certificat de Changement de Résidence) doivent ajouter une autorisation consulaire et une attestation de radiation du registre de commerce (pour les commerçants) 9.
-
-III. Étapes Administratives Détaillées
-Étape 1 : Demande d’Autorisation (ANIV)
-Obtention :
-
-Soumettre un dossier à l’Agence Nationale de l’Immatriculation des Véhicules (ANIV).
-
-Pièces requises : Certificat de conformité, facture, certificat d’origine 1.
-
-Délai : Variable, mais prévoir 2 à 4 semaines.
-
-Étape 2 : Passage en Douane
-Contrôle de la valeur :
-
-Les douanes comparent le prix déclaré avec la valeur Argus (site de référence) 1.
-
-En cas d’écart, paiement d’un supplément (sans pénalité pour un usage non commercial) 1.
-
-Dédouanement :
-
-Transfert obligatoire vers des "ports secs" (zones douanières secondaires) depuis juin 2025 pour désengorger les ports 3.
-
-Documents à présenter : Dossier complet + quitus de paiement des taxes.
-
-Étape 3 : Expertise Technique
-Vérification :
-
-Par un expert agréé par le ministère des Mines.
-
-Contrôle de la conformité technique et environnementale 4.
-
-Risques :
-
-Non-conformité → Réexportation aux frais de l’importateur 4.
-
-Étape 4 : Immatriculation
-Délivrance de la carte grise :
-
-Sur présentation du rapport d’expertise et des documents douaniers.
-
-Délai : 1 mois maximum après l’arrivée du véhicule (titres de passage temporaires) 4.
-
-IV. Taxes et Droits Applicables
-Le coût fiscal représente ~51% de la valeur du véhicule :
-
-Taxe	Taux	Base d’Application
-Droits de douane	30%	Valeur CIF (Coût + Assurance + Fret)
-Taxe de Contribution de Solidarité (TCS)	2%	Valeur CIF
-TVA	19%	Valeur CIF + Droits de douane
-Total	51%	
-Grille tarifaire de référence :
-
-Depuis 2025, les douanes utilisent une grille officielle pour évaluer les véhicules (ex. : un Tiguan 2.0L 2025 = 46 480 €) 7.
-
-Exonérations :
-
-Handicapés civils, invalides de guerre (>60%), détenteurs de CCR (plafond : 60 000 €) 29.
-
-V. Limites Légales et Restrictions
-1. Usage et Cession
-Usage strictement personnel :
-
-Interdiction de revente avant 3 ans (tampon "interdiction de cession" sur les documents) 8.
-
-Exceptions :
-
-Remboursement partiel des avantages fiscaux si revente anticipée :
-
-100% si < 12 mois,
-
-66% si 12-24 mois,
-
-33% si 24-36 mois 8.
-
-2. Fréquence d’Importation
-Quota :
-
-1 véhicule tous les 3 ans par particulier 4.
-
-3. Textes Réglementaires de Référence
-Décret exécutif n°23-74 (20 février 2023) : Cadre légal pour l’importation de véhicules d’occasion 4.
-
-Loi de finances 2025 : Restrictions sur la cession des véhicules 8.
-
-Décret exécutif n°20-227 (2020) : Règles pour les concessionnaires de neufs 2.
-
-VI. Pièges à Éviter et Conseils Pratiques
-Choisir le bon fournisseur :
-
-La Chine est devenue le premier exportateur vers l’Algérie (prix attractifs, modèles récents) 36.
-
-Coût d’expédition :
-
-Prévoir entre 1 000 et 2 500 USD pour le fret maritime (durée : 15-45 jours) 6.
-
-Vérifier les ports agréés :
-
-Alger offre les tarifs les plus compétitifs 36.
-
-Conclusion : Un Processus Complexe Mais Accessible
-L’importation d’un véhicule en Algérie reste encadrée par des règles strictes, mais offre désormais une alternative crédible face à la pénurie de neufs. La clé du succès réside dans :
-
-Le respect scrupuleux des critères d’éligibilité,
-
-La préparation méticuleuse des documents,
-
-L’anticipation des coûts fiscaux (≥ 51% de la valeur).
-
-Avec la modernisation des ports et l’harmonisation des procédures, cette libéralisation contrôlée pourrait à terme dynamiser le marché automobile algérien 378.
+Pour toute vérification ou information complémentaire, il est impératif de consulter les sources officielles :
+-   **Direction Générale des Douanes Algériennes :** [www.douane.gov.dz](https://www.douane.gov.dz)
+-   **Décret exécutif n° 23-74 du 20 février 2023** fixant les conditions et les modalités de dédouanement et du contrôle de conformité des véhicules de tourisme et utilitaires d’occasion acquis par les particuliers résidents.
+-   **Loi de Finances en vigueur.**

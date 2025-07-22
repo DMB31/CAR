@@ -1,9 +1,6 @@
 {
-  "/_not-found": "app/_not-found.js",
-  "/api/quote/route": "app/api/quote/route.js",
-  "/robots.txt/route": "app/robots.txt/route.js",
-  "/sitemap.xml/route": "app/sitemap.xml/route.js",
   "/[locale]/page": "app/[locale]/page.js",
   "/[locale]/blog/page": "app/[locale]/blog/page.js",
-  "/[locale]/blog/[slug]/page": "app/[locale]/blog/[slug]/page.js"
+  "/[locale]/blog/[slug]/page": "app/[locale]/blog/[slug]/page.js",
+  "/[locale]/catalogue/page": "app/[locale]/catalogue/page.js"
 }

@@ -23,7 +23,7 @@ export default function Header() {
 
   const navLinks = [
     { href: isOnBlogPage ? `${homeUrl}#services` : '#services', label: t('nav_services') },
-    
+    { href: `${homeUrl}/catalogue`, label: t('nav_catalog') },
     { href: isOnBlogPage ? `${homeUrl}#devis` : '#devis', label: t('nav_quote') },
     { href: isOnBlogPage ? `${homeUrl}#contact` : '#contact', label: t('nav_contact') }
   ]
@@ -38,7 +38,7 @@ export default function Header() {
               <Car className="w-5 h-5 md:w-6 md:h-6 text-white" />
             </div>
             <div>
-              <h1 className="text-lg md:text-xl font-bold text-gray-900 drop-shadow-sm">{t('title')}</h1>
+              <h1 className="text-sm md:text-base font-bold text-gray-900 drop-shadow-sm">{t('title')}</h1>
               <p className="text-xs text-gray-600 hidden sm:block">{t('subtitle')}</p>
             </div>
           </Link>
@@ -47,9 +47,13 @@ export default function Header() {
           <nav className="hidden lg:flex items-center space-x-8">
             <Link href={homeUrl} className="nav-link">{t('nav_home')}</Link>
             {navLinks.map((link) => (
-              <a key={link.href} href={link.href} className="nav-link">{link.label}</a>
+              link.href.startsWith('#') ? (
+                <a key={link.href} href={link.href} className="nav-link">{link.label}</a>
+              ) : (
+                <Link key={link.href} href={link.href} className="nav-link">{link.label}</Link>
+              )
             ))}
-            <Link href={`${homeUrl}/blog`} className="nav-link">Blog</Link>
+            <Link href={`${homeUrl}/blog`} className="nav-link">{t('nav_blog')}</Link>
           </nav>
 
           {/* Contact Info & CTA */}
@@ -95,14 +99,25 @@ export default function Header() {
                 {t('nav_home')}
               </Link>
               {navLinks.map((link) => (
-                <a
-                  key={link.href}
-                  href={link.href}
-                  className="text-gray-700 hover:text-primary-600 transition-colors py-2 text-base font-medium rounded-lg hover:bg-gray-50 px-2"
-                  onClick={() => setIsMenuOpen(false)}
-                >
-                  {link.label}
-                </a>
+                link.href.startsWith('#') ? (
+                  <a
+                    key={link.href}
+                    href={link.href}
+                    className="text-gray-700 hover:text-primary-600 transition-colors py-2 text-base font-medium rounded-lg hover:bg-gray-50 px-2"
+                    onClick={() => setIsMenuOpen(false)}
+                  >
+                    {link.label}
+                  </a>
+                ) : (
+                  <Link
+                    key={link.href}
+                    href={link.href}
+                    className="text-gray-700 hover:text-primary-600 transition-colors py-2 text-base font-medium rounded-lg hover:bg-gray-50 px-2"
+                    onClick={() => setIsMenuOpen(false)}
+                  >
+                    {link.label}
+                  </Link>
+                )
               ))}
               <Link
                 href={`${homeUrl}/blog`}

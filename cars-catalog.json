@@ -1,0 +1,387 @@
+{
+  "vehicles": [
+    {
+      "id": "bmw-320i-2023-001",
+      "brand": "BMW",
+      "model": "Série 3 320i",
+      "year": 2023,
+      "price": 45000,
+      "currency": "EUR",
+      "fuelType": "Essence",
+      "transmission": "Automatique",
+      "mileage": 15000,
+      "engine": "2.0L",
+      "cylindree": 1998,
+      "power": "184 ch",
+      "condition": "used",
+      "images": [
+        "/Logos/bmw-logo-2020-blue-white-grand.png",
+        "/Logos/AUDI_A3.jpg"
+      ],
+      "features": [
+        "GPS Navigation",
+        "Climatisation automatique",
+        "Sièges cuir",
+        "Caméra de recul",
+        "Détecteur d'angle mort",
+        "Régulateur de vitesse adaptatif",
+        "LED Headlights",
+        "Toit ouvrant panoramique"
+      ],
+      "location": "Luxembourg",
+      "description": "BMW Série 3 en excellent état, entretien BMW officiel, garantie constructeur restante. Véhicule non fumeur, premier propriétaire.",
+      "vin": "WBA***********",
+      "firstRegistration": "2023-03-15",
+      "color": "Noir Métal",
+      "interiorColor": "Cuir noir",
+      "doors": 4,
+      "seats": 5,
+      "co2Emissions": 142,
+      "fuelConsumption": {
+        "city": "7.2L/100km",
+        "highway": "5.1L/100km",
+        "combined": "6.0L/100km"
+      },
+      "safety": ["ABS", "ESP", "Airbags multiples", "ISOFIX"],
+      "availability": "available",
+      "tags": ["populaire", "économique", "premium"]
+    },
+    {
+      "id": "mercedes-a180-2024-001",
+      "brand": "Mercedes-Benz",
+      "model": "Classe A 180",
+      "year": 2024,
+      "price": 35000,
+      "currency": "EUR",
+      "fuelType": "Essence",
+      "transmission": "Automatique",
+      "mileage": 5000,
+      "engine": "1.3L",
+      "cylindree": 1332,
+      "power": "136 ch",
+      "condition": "used",
+      "images": [
+        "/Logos/Mercedes-Benz-logo-2011-1920x1080-grand.png"
+      ],
+      "features": [
+        "MBUX Multimedia",
+        "LED High Performance",
+        "Parktronic",
+        "Régulateur de vitesse",
+        "Climatisation THERMOTRONIC",
+        "Volant multifonction",
+        "Miroir électriques",
+        "Vitres électriques"
+      ],
+      "location": "Luxembourg",
+      "description": "Mercedes Classe A récente, technologie MBUX dernière génération, parfait état, garantie jusqu'en 2027.",
+      "vin": "WDD***********",
+      "firstRegistration": "2024-01-10",
+      "color": "Blanc polaire",
+      "interiorColor": "Tissu noir",
+      "doors": 5,
+      "seats": 5,
+      "co2Emissions": 138,
+      "fuelConsumption": {
+        "city": "6.8L/100km",
+        "highway": "4.9L/100km",
+        "combined": "5.7L/100km"
+      },
+      "safety": ["Mercedes-Benz Intelligent Drive", "ABS", "ESP", "7 Airbags"],
+      "availability": "available",
+      "tags": ["nouveau", "technologie", "compact"]
+    },
+    {
+      "id": "audi-a4-tdi-2023-001",
+      "brand": "Audi",
+      "model": "A4 2.0 TDI",
+      "year": 2023,
+      "price": 42000,
+      "currency": "EUR",
+      "fuelType": "Diesel",
+      "transmission": "Automatique",
+      "mileage": 20000,
+      "engine": "2.0L TDI",
+      "cylindree": 1968,
+      "power": "150 ch",
+      "condition": "used",
+      "images": [
+        "/Logos/Audi-logo-1920x1080-grand.png"
+      ],
+      "features": [
+        "MMI Navigation",
+        "Quattro AWD",
+        "Phares Xénon",
+        "Toit ouvrant électrique",
+        "Sièges sport",
+        "Virtual Cockpit",
+        "Audi Drive Select",
+        "Park Assist"
+      ],
+      "location": "Luxembourg",
+      "description": "Audi A4 avec transmission Quattro, équipement complet, entretien Audi, carnet de maintenance à jour.",
+      "vin": "WAU***********",
+      "firstRegistration": "2023-02-20",
+      "color": "Gris Daytona",
+      "interiorColor": "Cuir noir",
+      "doors": 4,
+      "seats": 5,
+      "co2Emissions": 127,
+      "fuelConsumption": {
+        "city": "5.8L/100km",
+        "highway": "4.2L/100km",
+        "combined": "4.8L/100km"
+      },
+      "safety": ["Audi Pre Sense", "ABS", "ESP", "8 Airbags"],
+      "availability": "available",
+      "tags": ["diesel", "quattro", "économique"]
+    },
+    {
+      "id": "peugeot-3008-hybrid-2024-001",
+      "brand": "Peugeot",
+      "model": "3008 GT Line",
+      "year": 2024,
+      "price": 32000,
+      "currency": "EUR",
+      "fuelType": "Hybride",
+      "transmission": "Automatique",
+      "mileage": 8000,
+      "engine": "1.6L Hybrid",
+      "cylindree": 1598,
+      "power": "180 ch",
+      "condition": "used",
+      "images": [
+        "/Logos/Peugeot-logo-2010-1920x1080-grand.png"
+      ],
+      "features": [
+        "i-Cockpit 3D",
+        "Sièges AGR avec massage",
+        "Head-Up Display",
+        "Aide au stationnement 360°",
+        "Hayon mains libres",
+        "Éclairage LED Matrix",
+        "Jantes alliage 19 pouces",
+        "Drive Assist Plus"
+      ],
+      "location": "Luxembourg",
+      "description": "Peugeot 3008 hybride dernière génération, technologie i-Cockpit révolutionnaire, très économique en consommation.",
+      "vin": "VF3***********",
+      "firstRegistration": "2024-04-05",
+      "color": "Gris Artense",
+      "interiorColor": "Cuir Nappa noir",
+      "doors": 5,
+      "seats": 5,
+      "co2Emissions": 31,
+      "fuelConsumption": {
+        "city": "1.4L/100km",
+        "highway": "1.3L/100km",
+        "combined": "1.3L/100km"
+      },
+      "electricRange": "59 km",
+      "safety": ["Active Safety Brake", "ABS", "ESP", "6 Airbags"],
+      "availability": "available",
+      "tags": ["hybride", "écologique", "innovation"]
+    },
+    {
+      "id": "renault-megane-etech-2024-001",
+      "brand": "Renault",
+      "model": "Mégane E-Tech",
+      "year": 2024,
+      "price": 38000,
+      "currency": "EUR",
+      "fuelType": "Électrique",
+      "transmission": "Automatique",
+      "mileage": 3000,
+      "engine": "Électrique",
+      "cylindree": 0,
+      "power": "220 ch",
+      "condition": "used",
+      "images": [
+        "/Logos/Renault-logo-2015-2048x2048-grand.png"
+      ],
+      "features": [
+        "100% Électrique",
+        "Écran OpenR Link 12 pouces",
+        "Charge rapide DC",
+        "Pompe à chaleur",
+        "One Pedal driving",
+        "Planificateur de trajet",
+        "Multi-Sense",
+        "Caméra 360°"
+      ],
+      "location": "Luxembourg",
+      "description": "Renault Mégane 100% électrique, autonomie 450km WLTP, technologie de pointe, charge rapide 130kW.",
+      "vin": "VF1***********",
+      "firstRegistration": "2024-06-12",
+      "color": "Bleu Iron",
+      "interiorColor": "Tissu gris",
+      "doors": 5,
+      "seats": 5,
+      "co2Emissions": 0,
+      "batteryCapacity": "60 kWh",
+      "electricRange": "450 km",
+      "chargingTime": {
+        "ac11kw": "5h",
+        "dc130kw": "30min (10-80%)"
+      },
+      "safety": ["Renault Safety 360", "ABS", "ESP", "6 Airbags"],
+      "availability": "available",
+      "tags": ["électrique", "écologique", "zéro émission"]
+    },
+    {
+      "id": "volkswagen-golf-gti-2023-001",
+      "brand": "Volkswagen",
+      "model": "Golf 8 GTI",
+      "year": 2023,
+      "price": 40000,
+      "currency": "EUR",
+      "fuelType": "Essence",
+      "transmission": "Manuelle",
+      "mileage": 12000,
+      "engine": "2.0L TSI",
+      "cylindree": 1984,
+      "power": "245 ch",
+      "condition": "used",
+      "images": [
+        "/Logos/Volkswagen-logo-2019-1500x1500-grand.png"
+      ],
+      "features": [
+        "Performance Package",
+        "Différentiel autobloquant",
+        "Suspension DCC",
+        "Échappement sport Akrapovic",
+        "Sièges Recaro",
+        "Digital Cockpit Pro",
+        "Jantes Pretoria 19 pouces",
+        "Travel Assist"
+      ],
+      "location": "Luxembourg",
+      "description": "Volkswagen Golf GTI version performance, échappement Akrapovic, suspension DCC, état exceptionnel pour les passionnés.",
+      "vin": "WVW***********",
+      "firstRegistration": "2023-05-18",
+      "color": "Rouge Tornado",
+      "interiorColor": "Tartan GTI",
+      "doors": 5,
+      "seats": 5,
+      "co2Emissions": 169,
+      "fuelConsumption": {
+        "city": "8.2L/100km",
+        "highway": "5.8L/100km",
+        "combined": "6.7L/100km"
+      },
+      "safety": ["Front Assist", "ABS", "ESP", "7 Airbags"],
+      "availability": "available",
+      "tags": ["sport", "performance", "iconique"]
+    },
+    {
+      "id": "tesla-model3-2024-001",
+      "brand": "Tesla",
+      "model": "Model 3 Long Range",
+      "year": 2024,
+      "price": 48000,
+      "currency": "EUR",
+      "fuelType": "Électrique",
+      "transmission": "Automatique",
+      "mileage": 2000,
+      "engine": "Électrique AWD",
+      "cylindree": 0,
+      "power": "351 ch",
+      "condition": "used",
+      "images": [
+        "/Logos/580b57fcd9996e24bc43c46e.png"
+      ],
+      "features": [
+        "Autopilot Enhanced",
+        "Supercharger inclus",
+        "Écran tactile 15 pouces",
+        "Mise à jour OTA",
+        "Full Self-Driving ready",
+        "Premium Audio",
+        "Toit en verre panoramique",
+        "Clé smartphone"
+      ],
+      "location": "Luxembourg",
+      "description": "Tesla Model 3 Highland dernière génération, Autopilot Enhanced, accès au réseau Supercharger, technologie révolutionnaire.",
+      "vin": "5YJ***********",
+      "firstRegistration": "2024-08-03",
+      "color": "Blanc nacré",
+      "interiorColor": "Noir premium",
+      "doors": 4,
+      "seats": 5,
+      "co2Emissions": 0,
+      "batteryCapacity": "75 kWh",
+      "electricRange": "629 km",
+      "chargingTime": {
+        "ac11kw": "7h",
+        "supercharger250kw": "25min (10-80%)"
+      },
+      "safety": ["Tesla Safety 5 étoiles", "ABS", "ESP", "8 Airbags"],
+      "availability": "available",
+      "tags": ["tesla", "autopilot", "premium"]
+    },
+    {
+      "id": "porsche-macan-2023-001",
+      "brand": "Porsche",
+      "model": "Macan S",
+      "year": 2023,
+      "price": 75000,
+      "currency": "EUR",
+      "fuelType": "Essence",
+      "transmission": "Automatique",
+      "mileage": 8500,
+      "engine": "3.0L V6",
+      "cylindree": 2997,
+      "power": "380 ch",
+      "condition": "used",
+      "images": [
+        "/Logos/580b57fcd9996e24bc43c46e.png"
+      ],
+      "features": [
+        "Porsche Traction Management",
+        "PASM Suspension",
+        "PCM 6.0",
+        "Bose Surround Sound",
+        "Toit panoramique",
+        "Sièges 18 directions",
+        "Jantes Turbo 21 pouces",
+        "Pack Sport Chrono"
+      ],
+      "location": "Luxembourg",
+      "description": "Porsche Macan S, performances sportives SUV, équipement complet, entretien Porsche Centre, état irréprochable.",
+      "vin": "WP1***********",
+      "firstRegistration": "2023-07-22",
+      "color": "Gris Volcanique Métallisé",
+      "interiorColor": "Cuir noir avec surpiqûres contrastées",
+      "doors": 5,
+      "seats": 5,
+      "co2Emissions": 234,
+      "fuelConsumption": {
+        "city": "11.2L/100km",
+        "highway": "7.8L/100km",
+        "combined": "9.1L/100km"
+      },
+      "safety": ["Porsche Stability Management", "ABS", "ESP", "8 Airbags"],
+      "availability": "available",
+      "tags": ["luxury", "sport", "suv"]
+    }
+  ],
+  "brands": [
+    "BMW", "Mercedes-Benz", "Audi", "Peugeot", "Renault", "Volkswagen", "Tesla", "Porsche"
+  ],
+  "fuelTypes": [
+    "Essence", "Diesel", "Hybride", "Électrique"
+  ],
+  "conditions": [
+    "new", "used"
+  ],
+  "locations": [
+    "Luxembourg", "France", "Allemagne", "Belgique"
+  ],
+  "priceRanges": [
+    {"min": 0, "max": 25000, "label": "Moins de 25 000€"},
+    {"min": 25000, "max": 40000, "label": "25 000€ - 40 000€"},
+    {"min": 40000, "max": 60000, "label": "40 000€ - 60 000€"},
+    {"min": 60000, "max": 100000, "label": "60 000€ - 100 000€"},
+    {"min": 100000, "max": 999999, "label": "Plus de 100 000€"}
+  ]
+} 
