@@ -4,7 +4,7 @@ import Link from 'next/link';
 import matter from 'gray-matter';
 import { useTranslations } from 'next-intl';
 import { getTranslations } from 'next-intl/server';
-import Header from '@/components/Header';
+import BlogHeaderWrapper from '@/components/BlogHeaderWrapper';
 
 interface BlogPost {
   slug: string;
@@ -75,7 +75,7 @@ export default async function BlogIndexPage({ params }: { params: { locale: stri
 
   return (
     <main className="min-h-screen bg-gray-50">
-      <Header />
+      <BlogHeaderWrapper />
       {/* Hero Section */}
       <section className="bg-gradient-to-r from-primary-500 to-primary-600 text-white">
         <div className="container-custom section-padding">
