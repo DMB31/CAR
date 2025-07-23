@@ -30,7 +30,7 @@ function extractExcerpt(content: string, length: number = 150): string {
 }
 
 async function getBlogPosts(locale: string): Promise<BlogPost[]> {
-  const baseDir = path.join(process.cwd(), 'app', '[locale]', 'blog', '[slug]', locale);
+  const baseDir = path.join(process.cwd(), 'content', 'blog', locale);
   
   if (!fs.existsSync(baseDir)) {
     return [];
