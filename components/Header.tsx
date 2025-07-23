@@ -17,15 +17,15 @@ export default function Header() {
     setIsMenuOpen(!isMenuOpen)
   }
 
-  // Détermine si nous sommes sur une page de blog
-  const isOnBlogPage = pathname.includes('/blog')
+  // Détermine si nous sommes sur la page d'accueil
+  const isHomePage = pathname === `/${locale}` || pathname === '/';
   const homeUrl = `/${locale}`
 
   const navLinks = [
-    { href: isOnBlogPage ? `${homeUrl}#services` : '#services', label: t('nav_services') },
+    { href: isHomePage ? '#services' : `${homeUrl}#services`, label: t('nav_services') },
     { href: `${homeUrl}/catalogue`, label: t('nav_catalog') },
-    { href: isOnBlogPage ? `${homeUrl}#devis` : '#devis', label: t('nav_quote') },
-    { href: isOnBlogPage ? `${homeUrl}#contact` : '#contact', label: t('nav_contact') }
+    { href: isHomePage ? '#devis' : `${homeUrl}#devis`, label: t('nav_quote') },
+    { href: isHomePage ? '#contact' : `${homeUrl}#contact`, label: t('nav_contact') }
   ]
 
   return (
@@ -47,8 +47,8 @@ export default function Header() {
           <nav className="hidden lg:flex items-center space-x-8">
             <Link href={homeUrl} className="nav-link">{t('nav_home')}</Link>
             {navLinks.map((link) => (
-              link.href.startsWith('#') ? (
-                <a key={link.href} href={link.href} className="nav-link">{link.label}</a>
+              link.href.startsWith(`${homeUrl}#`) || link.href.startsWith('#') ? (
+                <Link key={link.href} href={link.href} className="nav-link">{link.label}</Link>
               ) : (
                 <Link key={link.href} href={link.href} className="nav-link">{link.label}</Link>
               )
@@ -63,7 +63,7 @@ export default function Header() {
               <span className="hidden xl:inline font-semibold tracking-wide">{t('phone_number')}</span>
             </div>
             <LanguageSwitcher />
-            <a href={isOnBlogPage ? `${homeUrl}#devis` : '#devis'} className="btn-primary text-sm px-4 py-2 rounded-full shadow-md hover:scale-105 transition-transform">
+            <a href={isHomePage ? '#devis' : `${homeUrl}#devis`} className="btn-primary text-sm px-4 py-2 rounded-full shadow-md hover:scale-105 transition-transform">
               {t('free_quote')}
             </a>
           </div>
@@ -99,25 +99,14 @@ export default function Header() {
                 {t('nav_home')}
               </Link>
               {navLinks.map((link) => (
-                link.href.startsWith('#') ? (
-                  <a
-                    key={link.href}
-                    href={link.href}
-                    className="text-gray-700 hover:text-primary-600 transition-colors py-2 text-base font-medium rounded-lg hover:bg-gray-50 px-2"
-                    onClick={() => setIsMenuOpen(false)}
-                  >
-                    {link.label}
-                  </a>
-                ) : (
-                  <Link
-                    key={link.href}
-                    href={link.href}
-                    className="text-gray-700 hover:text-primary-600 transition-colors py-2 text-base font-medium rounded-lg hover:bg-gray-50 px-2"
-                    onClick={() => setIsMenuOpen(false)}
-                  >
-                    {link.label}
-                  </Link>
-                )
+                <Link
+                  key={link.href}
+                  href={link.href}
+                  className="text-gray-700 hover:text-primary-600 transition-colors py-2 text-base font-medium rounded-lg hover:bg-gray-50 px-2"
+                  onClick={() => setIsMenuOpen(false)}
+                >
+                  {link.label}
+                </Link>
               ))}
               <Link
                 href={`${homeUrl}/blog`}
@@ -138,7 +127,7 @@ export default function Header() {
                   <Phone className="w-4 h-4" />
                   <span className="font-semibold tracking-wide">{t('phone_number')}</span>
                 </div>
-                <a href={isOnBlogPage ? `${homeUrl}#devis` : '#devis'} className="btn-primary w-full text-center block rounded-full py-2 shadow-md hover:scale-105 transition-transform" onClick={() => setIsMenuOpen(false)}>
+                <a href={isHomePage ? '#devis' : `${homeUrl}#devis`} className="btn-primary w-full text-center block rounded-full py-2 shadow-md hover:scale-105 transition-transform" onClick={() => setIsMenuOpen(false)}>
                   {t('free_quote')}
                 </a>
               </div>

@@ -1,8 +1,9 @@
 'use client'
 
 import { useState, useEffect } from 'react'
-import { useTranslations } from 'next-intl'
+import { useTranslations, useLocale } from 'next-intl'
 import Image from 'next/image'
+import Link from 'next/link'
 import { Card, CardContent, CardFooter } from '@/components/ui/card'
 import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
@@ -196,7 +197,7 @@ export default function CarCatalog() {
                     alt={`${car.brand} ${car.model}`}
                     width={400}
                     height={225}
-                    className="object-contain w-full h-full"
+                    className="object-cover w-full h-full"
                   />
                 </div>
                 <Badge 
@@ -259,15 +260,6 @@ export default function CarCatalog() {
                 </div>
               </CardContent>
 
-              <CardFooter className="p-4 pt-0 space-y-2 flex flex-col">
-                <Button className="w-full" size="sm">
-                  {t('see_details')}
-                </Button>
-                <Button variant="outline" size="sm" className="w-full">
-                  <Phone className="w-4 h-4 mr-2" />
-                  {t('contact_seller')}
-                </Button>
-              </CardFooter>
             </Card>
           ))}
         </div>
@@ -312,8 +304,8 @@ export default function CarCatalog() {
               <Phone className="w-5 h-5 mr-2" />
               {t('contact_phone')}
             </Button>
-            <Button size="lg" variant="outline" className="border-white text-white hover:bg-white hover:text-primary-900 w-full sm:w-auto">
-              {t('contact_quote')}
+            <Button asChild size="lg" variant="outline" className="bg-transparent border-white text-white hover:bg-white hover:text-primary-900 w-full sm:w-auto">
+              <Link href={`/${useLocale()}#devis`}>{t('contact_quote')}</Link>
             </Button>
           </div>
         </div>
