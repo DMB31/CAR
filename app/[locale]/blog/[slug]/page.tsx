@@ -5,6 +5,7 @@ import { marked } from 'marked';
 import { notFound } from 'next/navigation';
 import LawBox from '@/components/LawBox';
 import 'server-only';
+import Header from '@/components/Header';
 
 // This function is called at build time to generate the static paths for each blog post.
 export async function generateStaticParams() {
@@ -82,7 +83,8 @@ export default async function PostPage({ params }: { params: { slug: string, loc
 
   return (
     <div className="bg-gray-50 text-gray-800">
-        <div className="container mx-auto px-4 py-8 md:py-12">
+      <Header />
+      <div className="container mx-auto px-4 py-8 md:py-12">
             <article className="prose prose-lg max-w-4xl mx-auto bg-white p-6 md:p-10 rounded-lg shadow-md">
                 <div className="border-b pb-4 mb-6">
                     <h1 className="text-3xl md:text-4xl font-extrabold text-gray-900 leading-tight">{(currentPost as any).title}</h1>
