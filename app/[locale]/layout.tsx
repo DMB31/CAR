@@ -8,6 +8,7 @@ export async function generateMetadata({params}: {params: {locale: string}}): Pr
   const t = await getTranslations({locale, namespace: 'Metadata'});
  
   return {
+    metadataBase: new URL('https://import-auto-algerie.com'),
     title: t('title'),
     description: t('description'),
     keywords: t('keywords'),
@@ -26,7 +27,7 @@ export async function generateMetadata({params}: {params: {locale: string}}): Pr
       siteName: 'Import Auto Algérie',
       images: [
         {
-          url: 'https://import-auto-algerie.com/og-image.jpg', // To be updated with actual domain
+          url: '/og-image.jpg', // Relative path since metadataBase is set
           width: 1200,
           height: 630,
           alt: t('og_alt'),
@@ -39,7 +40,7 @@ export async function generateMetadata({params}: {params: {locale: string}}): Pr
       card: 'summary_large_image',
       title: t('og_title'),
       description: t('og_description'),
-      images: ['https://import-auto-algerie.com/twitter-image.jpg'], // To be updated with actual domain
+      images: ['/twitter-image.jpg'], // Relative path since metadataBase is set
     },
     robots: {
       index: true,
